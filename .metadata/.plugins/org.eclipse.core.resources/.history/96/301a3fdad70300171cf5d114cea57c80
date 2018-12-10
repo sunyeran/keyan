@@ -1,0 +1,29 @@
+Ext.define('keyansys.store.staticData.Paper', {
+    extend: 'keyansys.store.staticData.Abstract',
+  //  alias: 'widget.paper',
+    requires: [
+        'keyansys.model.staticData.Paper',
+        'keyansys.proxy.StaticData'
+    ],
+    
+   
+    
+    storeId: 'paper',
+    successProperty:'success',
+    proxy:{ paper:
+    	{
+    	 model: 'keyansys.model.staticData.Paper',
+        type: 'staticdataproxy',
+         autoSync:true,
+        extraParams: {
+            entity: 'Paper'
+        }
+    	}	
+    },
+    listeners:{
+    	exception:function(){
+    		console.info(arguments);
+    	}
+    }
+    
+});

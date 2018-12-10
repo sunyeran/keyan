@@ -1,0 +1,235 @@
+package com.keyansys.hibernate.dao;
+
+import java.util.Iterator;
+import java.util.List;
+
+import javax.persistence.Entity;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.keyan.hibernate.beans.Notice;
+import com.keyan.hibernate.beans.User;
+
+@Entity
+public class UserDAO extends HibernateDaoSupport implements IUserDAO {
+	private static final Log log = LogFactory.getLog(UserDAO.class);
+
+	@SuppressWarnings("unchecked")
+	public boolean isValid(final String name, final String password) {
+		List list = (List) getHibernateTemplate().execute(new HibernateCallback() {
+			public Object doInHibernate(Session session)
+					throws HibernateException {
+				List userList = session.createCriteria(User.class).add(
+						Restrictions.eq("userName", name)).add(
+						Restrictions.eq("password", password)).list();
+				return userList;
+			}
+		});
+		if (list.size() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isExist(final String name) {
+		List list = (List) getHibernateTemplate().execute(new HibernateCallback() {
+			public Object doInHibernate(Session session)
+					throws HibernateException {
+				List result = session.createCriteria(User.class).add(
+						Restrictions.eq("userName", name)).list();
+				return result;
+			}
+		});
+		if (list.size() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public void savePartData(String password,String username)
+            throws HibernateException {
+		Session session=this.getSession();
+		try {
+			Query query=session.createQuery("update User u set u.password=? where u.userName=?");
+			query.setString(0, password);
+			query.setString(1, username);
+			query.executeUpdate();
+			releaseSession(session);
+		} catch (RuntimeException re) {
+			log.error("更新失败", re);
+			throw re;
+		}
+	}
+	public void saveWorkloadLevel(String workloadLevel,String positionalTitles)
+            throws HibernateException {
+		Session session=this.getSession();
+		try {
+			Query query=session.createQuery("update User u set u.workloadLevel=? where u.positionalTitles=?");
+			query.setString(0, workloadLevel);
+			query.setString(1, positionalTitles);
+			query.executeUpdate();
+			releaseSession(session);
+		} catch (RuntimeException re) {
+			log.error("更新失败", re);
+			throw re;
+		}
+	}
+	public void editUser(String password,String username)
+            throws HibernateException {
+		  Session session=this.getSession();
+		try {
+			Query query=session.createQuery("update User u set u.password=? where u.userName=?");
+			query.setString(0, password);
+			query.setString(1, username);
+			query.executeUpdate();
+			releaseSession(session);
+		} catch (RuntimeException re) {
+			log.error("更新失败", re);
+			throw re;
+		}
+	}
+	/*public void savePartData(String password,String name)
+            throws HibernateException {
+
+      
+		String hql="update User u set u.password =? where u.name = ?";
+		this.getSession().clear();
+		 Session session = this.getHibernateTemplate().getSessionFactory().openSession();   
+		 Transaction tx =null; 
+		try {
+			 
+		
+			tx = session.beginTransaction();    //启动事务
+			Query query = session.createQuery(hql);
+
+			// getSession().createQuery(hql).setParameter("password", password).setParameter("name", name).executeUpdate();
+             
+           query.setString(0, password);
+           query.setString(1, name);
+        
+        	query.executeUpdate();
+        	tx.commit();
+        	//session.close();
+        	//this.getSession().clear(); 
+        	//session.flush();   
+        } catch (Exception e) {
+            throw new HibernateException("");
+        } finally {
+            getSession().close();
+        }
+    }*/
+
+	public void insertUser(User user) {
+		getHibernateTemplate().saveOrUpdate(user);
+	}
+	
+	public User getUser(String userid) {
+		return (User) getHibernateTemplate().get(User.class,
+				new Integer(userid));
+	}
+
+	public List getUsers() {
+		return getHibernateTemplate().find("from User");
+	}
+	public List getUsersBydep(String str) {
+		Session session=this.getSession();
+		try {
+			//String queryString = "from Paper";
+			List list = session.createQuery(str).list();
+			releaseSession(session);
+			return list;
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+	public List getUserBydep(String hql,String dep) {
+		Session session=this.getSession();
+		try {
+			//return getHibernateTemplate().find(str);
+			//String queryString = "from Paper";
+			Query query = session.createQuery(hql);
+			 query.setString(0, dep);
+			 List list= query.list();
+			 releaseSession(session); 
+			return list;
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+	public User getUserByName(String name) {
+		String hql="from User u where u.name=?";
+		String userlist=name;
+		List ret=null;
+		Iterator it=null;
+		try {
+			ret =this.getHibernateTemplate().find(hql,userlist);
+			it=ret.iterator();
+			return (User)it.next();
+		} catch (RuntimeException re) {
+		//	log.error("get failed", re);
+			throw re;
+		}
+	}
+	public User getUserByUsername(String username) {
+		String hql="from User u where u.userName=?";
+		String userlist=username;
+		List ret=null;
+		Iterator it=null;
+		try {
+			ret =this.getHibernateTemplate().find(hql,userlist);
+			it=ret.iterator();
+			return (User)it.next();
+		} catch (RuntimeException re) {
+		//	log.error("get failed", re);
+			throw re;
+		}
+	}
+	public User getUserBydepAndName(String name,String dep) {
+		String hql="from User u where u.name=? and u.department=?";
+		String[] userlist=new String[2];
+		userlist[0]=name;
+		userlist[1]=dep;
+		List ret=null;
+		Iterator it=null;
+		try {
+			ret =this.getHibernateTemplate().find(hql,userlist);
+			it=ret.iterator();
+			return (User)it.next();
+		} catch (RuntimeException re) {
+		//	log.error("get failed", re);
+			throw re;
+		}
+	}
+	public void deleteUser(String userid) {
+		Object p = getHibernateTemplate().load(User.class, new Integer(userid));
+		getHibernateTemplate().delete(p);
+	}
+	public User findByUsername(String username,String password) {
+		String hql="from User u where u.userName=? and u.password=?";
+		String[] userlist=new String[2];
+		userlist[0]=username;
+		userlist[1]=password;
+		List ret=null;
+		Iterator it=null;
+		try {
+			ret =this.getHibernateTemplate().find(hql,userlist);
+			it=ret.iterator();
+			return (User)it.next();
+		} catch (RuntimeException re) {
+		//	log.error("get failed", re);
+			throw re;
+		}
+	}
+
+}

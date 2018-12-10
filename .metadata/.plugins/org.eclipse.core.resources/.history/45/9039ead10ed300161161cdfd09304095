@@ -1,0 +1,31 @@
+Ext.define('keyansys.model.menu.Item', {
+    extend: 'Ext.data.Model',
+
+    requires: [
+        'keyansys.model.menu.Root'
+    ],
+
+    idProperty: 'id',
+
+    fields: [
+        {
+            name: 'text'
+        },
+        {
+            name: 'iconCls'
+        },
+        {
+            name: 'className'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'parent_id'
+        }
+    ],
+    belongsTo: {
+        model: 'keyansys.model.menu.Root',
+        foreignKey: 'parent_id'
+    }
+});

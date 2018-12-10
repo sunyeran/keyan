@@ -1,0 +1,14 @@
+Ext.define("keyan.view.header.Main",{
+	 extend: "Ext.toolbar.Toolbar",
+
+	    cls: 'toolbar-btn-shadow',
+
+	    xtype: 'app-header',
+
+	    items: [
+	        { xtype: 'tbtext', text: '简单的CMS系统', id: 'app-header-title' },
+	        '->',
+	        { tooltip: '修改密码', iconCls: 'x-fa fa-key', cls: 'simplecms-header-button', handler: 'onChangePassword' },
+	        { tooltip: '退出', cls: 'simplecms-header-button', iconCls: 'x-fa fa-sign-out header-button-color', handler: 'onExit' }
+	    ]
+	});

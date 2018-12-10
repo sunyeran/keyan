@@ -1,0 +1,26 @@
+Ext.define('keyansys.view.menu.Accordion', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.mainmenu',
+ //   bodyStyle: 'background:#fff; padding:10px;',
+  //  width: 185,
+  
+    split: true,  
+    collapsible: true,  
+    floatable: false,         
+    tools: [{type: 'pin'}],  
+    header: {  
+                titlePosition: 2,  
+                titleAlign: 'center'  
+            },  
+    maximizable: true,  
+    layout: {    
+        type: 'accordion', 
+        pack: 'start',
+        animate: true, //点击的时候有动画动作   
+        titleCollapse: true,  
+        enableSplitters: true,  
+        hideCollapseTool: true,  
+    },    
+   iconCls: 'sitemap',
+    title: '导航'
+});

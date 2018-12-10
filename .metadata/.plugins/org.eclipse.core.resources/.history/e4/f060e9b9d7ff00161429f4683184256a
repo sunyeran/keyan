@@ -1,0 +1,22 @@
+
+Ext.define('keyansys.view.main.Header', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.appheader',
+   
+    cls:'app-header',//css  
+    height: 52,  
+    layout: {  
+        type: 'hbox',  
+        align: 'middle'  
+    },  
+    items:[{  
+        xtype: 'component',  
+        cls: 'app-header-logo'  
+    },{  
+        xtype: 'component',  
+        cls: 'app-header-title',  
+        html: 'Extjs5.0实例',  
+        flex: 1  
+    }]  
+});  
+                  

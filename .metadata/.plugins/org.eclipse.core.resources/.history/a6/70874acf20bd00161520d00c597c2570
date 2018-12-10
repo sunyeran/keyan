@@ -1,0 +1,127 @@
+package com.keyan.hibernate.beans;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.HibernateException;
+import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.Example;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * A data access object (DAO) providing persistence and search support for
+ * Teaching entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * 
+ * @see com.keyan.hibernate.beans.Teaching
+ * @author MyEclipse Persistence Tools
+ */
+public class TeachingDAO extends HibernateDaoSupport  implements ITeachingDAO
+{
+	private static final Log log = LogFactory.getLog(TeachingDAO.class);
+public Long findCount(String hql){
+	Session session = this.getHibernateTemplate().getSessionFactory().openSession();
+    try{
+		return (Long) session.createQuery(hql).uniqueResult();
+    }catch (RuntimeException re) {
+			log.error("find failed", re);
+			throw re;
+		}finally{
+			releaseSession(session);
+		}
+	}	
+public void update(Teaching transientInstance) {
+		log.debug("saving Teaching instance");
+		try {
+			getHibernateTemplate().saveOrUpdate(transientInstance);
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+public void deleteById(String id) {
+	log.debug("deleting Teaching instance");
+	try {
+		Object p = getHibernateTemplate().load(Teaching.class, new Integer(id));
+		getHibernateTemplate().delete(p);
+		log.debug("delete successful");
+	} catch (RuntimeException re) {
+		log.error("delete failed", re);
+		throw re;
+	}
+  }
+public List findAllForPage(String queryString,int pageSize,int page){
+	Query query = getSession().createQuery(queryString);
+    query.setFirstResult(page); 
+	query.setMaxResults(pageSize); 
+	return query.list();
+}
+public List findAll(String str) {
+	log.debug("finding all Teaching instances");
+	try {
+		//String queryString = "from Paper";
+		Query queryObject = getSession().createQuery(str);
+		return queryObject.list();
+	} catch (RuntimeException re) {
+		log.error("find all failed", re);
+		throw re;
+	}
+   }
+public List <Teaching>findByType(String str,String user,String begindate,String enddate) {
+	log.debug("finding all Teaching instances");
+	try {
+		//Session session = this.getHibernateTemplate().getSessionFactory().openSession();
+	    Query query =  getSession().createQuery(str);
+		query.setString(0, user);
+		query.setString(1, begindate);
+	    query.setString(2, enddate);
+	    return query.list();
+	} catch (RuntimeException re) {
+		log.error("find all failed", re);
+		throw re;
+	}
+	finally {
+		getSession().close();
+        
+    }
+   }
+public int getCount(String hql,String user,String begindate,String enddate)
+        throws HibernateException {
+
+  
+    
+    Query query = getSession().createQuery(hql);
+
+    query.setString(0, user);
+    query.setString(1, begindate);
+    query.setString(2, enddate);
+    try {
+    	int count=((Number) query.uniqueResult()).intValue();
+    	return count;
+    } catch (Exception e) {
+        throw new HibernateException("ooo");
+    } finally {
+        getSession().close();
+    }
+}
+public void updateById(int id,String approval) {
+	// TODO Auto-generated method stub
+	try {
+		//String str="update Paper p set p.approval='已审核' where p.paper_id=id";
+		Query query=getSession().createQuery("update Teaching p set p.approval=? where p.teaching_id=?");
+		query.setString(0, approval);
+		query.setInteger(1, id);
+		query.executeUpdate();
+	} catch (RuntimeException re) {
+		log.error("审核失败", re);
+		throw re;
+	}
+}
+}

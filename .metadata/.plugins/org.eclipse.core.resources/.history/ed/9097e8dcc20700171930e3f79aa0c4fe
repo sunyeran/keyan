@@ -1,0 +1,43 @@
+Ext.define('keyansys.view.staticData.PaperModel', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.paper',
+    requires: [
+       
+        'keyansys.model.staticData.Paper'
+      
+        
+    ], 
+    stores: {
+        papers: {
+            model:'keyansys.model.staticData.Paper',
+            autoLoad: true,
+        proxy: {
+            type: 'ajax',
+            api: {
+                read    : 'servlet/DataList',
+                create  : 'servlet/DataAdd',
+                update  : 'servlet/DataUpdate',
+                destroy : 'servlet/DataDelete'
+            },
+        reader: {
+            type: 'json',
+            rootProperty: 'data',
+            successProperty: 'success'
+        },
+            writer: {
+              //  type: 'associatedjson',
+                writeAllFields: true,
+                encode: true,
+                rootProperty: 'data',
+                allowSingle: false
+            }
+
+        }
+        }
+       
+      
+    
+    }
+   
+});

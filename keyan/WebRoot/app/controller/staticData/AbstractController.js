@@ -1,0 +1,644 @@
+Ext.define('keyan.controller.staticData.AbstractController', {
+    extend: 'Ext.app.Controller',
+
+    requires: [
+        'keyan.util.Util',
+       'Ext.ux.grid.Printer'
+    ],
+
+    stores: [
+        'staticData.Paper',
+        'staticData.Patent',
+        'staticData.Teaching',
+        'staticData.Subject',
+        'staticData.PaperCheck',
+        'staticData.PatentCheck',
+        'staticData.TeachingCheck',
+        'staticData.SubjectCheck',
+        'staticData.PaperUncheck',
+        'staticData.PatentUncheck',
+        'staticData.SubjectUncheck',
+        'staticData.TeachingUncheck',
+        'mail.PaperList',
+        'mail.PatentList',
+        'mail.SubjectList',
+        'mail.TeachingList'
+    ],
+
+    views: [
+        'staticData.AbstractGrid',
+        'staticData.AbstractAllKeyanGrid',
+        'staticData.Paper',
+        'mail.PaperList',
+        'mail.PatentList',
+        'mail.SubjectList',
+        'mail.TeachingList',
+        'staticData.Patent',
+        'staticData.Teaching',
+        'staticData.Subject',
+        'staticData.PaperCheck',
+        'staticData.AllPaperCheck',
+        'staticData.AllPaperUncheck',
+       'staticData.PatentCheck',
+       'staticData.AllPatentCheck',
+       'staticData.AllPatentUncheck',
+       'staticData.TeachingCheck',
+       'staticData.SubjectCheck',
+       'staticData.AllSubjectCheck',
+       'staticData.AllSubjectUncheck',
+       'staticData.PaperUncheck',
+       'staticData.PatentUncheck',
+       'staticData.SubjectUncheck',
+       'staticData.TeachingUncheck',
+       'staticData.AllTeachingCheck',
+       'staticData.AllTeachingUncheck',
+       'staticData.TeacherPaperUncheck',
+       'staticData.TeacherPatentUncheck',
+       'staticData.TeacherSubjectUncheck',
+       'staticData.TeacherTeachingUncheck'
+      // 'staticData.upload'
+    ],
+
+    init: function(application) {
+    	 Ext.QuickTips.init();
+    	  Ext.Loader.setPath('Ext.ux.exporter', 'ext/exporter','ext');
+    	  Ext.Ajax.on('requestcomplete',checkUserSessionStatus, this);
+          function checkUserSessionStatus(conn,response,options){
+             var result=response.responseText;
+                 result=Ext.JSON.decode(result);
+                 if(result.flag){
+                 	 Ext.Msg.alert('提示',"登录时间过长，请重新登录，谢谢。");
+                     window.top.location.href = "/keyan";
+                 }
+          };
+          //加入下面注释的代码，可以解决session会话过期重新登录的问题，但上传图片会出现问题。
+          /*  if(response.getResponseHeader("sessionstatus") == 'timeout'){
+                Ext.Msg.alert('提示',"登录时间过长，请重新登录，谢谢。");
+                window.top.location.href = "/keyan";
+              
+        }
+    }*/
+        this.control({
+        	"papercheckgrid":{
+        		 render: this.render
+        	},
+        	"allpapercheckgrid":{
+        		 render: this.render
+        	},
+        	"allpaperuncheckgrid":{
+        		 render: this.render
+        	},
+        	"paperlist":{
+        		 render: this.render
+        	},
+        	"teacherpaperuncheckgrid":{
+        		 render: this.render
+        	},
+        	"patentlist":{
+        		 render: this.render
+        	},
+        	"patentcheckgrid":{
+        		 render: this.render
+        	},
+        	"allpatentcheckgrid":{
+        		 render: this.render
+        	},
+        	"allpatentuncheckgrid":{
+        		 render: this.render
+        	},
+        	"teachingcheckgrid":{
+        		 render: this.render
+        	},
+        	"allteachingcheckgrid":{
+        		 render: this.render
+        	},
+        	"allteachinguncheckgrid":{
+        		 render: this.render
+        	},
+        	"teachinguncheckgrid":{
+        		 render: this.render
+        	},
+        	"teacherteachinguncheckgrid":{
+        		 render: this.render
+        	},
+        	"teacherpatentuncheckgrid":{
+        		 render: this.render
+        	},
+        	"subjectcheckgrid":{
+        		 render: this.render
+        	},
+        	"subjectuncheckgrid":{
+        		 render: this.render
+        	},
+        	"allsubjectcheckgrid":{
+        		 render: this.render
+        	},
+        	"allsubjectuncheckgrid":{
+        		 render: this.render
+        	},
+        	"teachersubjectuncheckgrid":{
+        		 render: this.render
+        	},
+        	"paperuncheckgrid":{
+        		 render: this.render
+        	},
+        	
+        	"patentuncheckgrid":{
+        		 render: this.render
+        	},
+            "staticdatagrid": {
+                render: this.render,
+                edit: this.onEdit
+            },
+            "staticdatagrid button[itemId=add]": {
+                click: this.onButtonClickAdd
+            },
+           /*  "staticdatagrid button[itemId=myUpload]": {
+                click: this.onButtonClickMyupload
+            },
+             "upload button[itemId=upload]": {
+                click: this.onButtonClickUpload
+            },*/
+            "upload button[itemId=cancel]": {
+                click: this.onButtonClickUploadCancel
+            },
+            "staticdatagrid button[itemId=save]": {
+                click: this.onButtonClickSave
+            },
+            "staticdatagrid button[itemId=cancel]": {
+                click: this.onButtonClickCancel
+            },
+            "staticdatagrid button[itemId=clearFilter]": {
+                click: this.onButtonClickClearFilter
+            },
+            "abstractallkeyangrid button[itemId=clearFilter]": {
+                click: this.onButtonClickAllClearFilter
+            },
+             "abstractallkeyangrid button#print": {
+                click: this.onButtonClickPrint
+            },
+            
+            "staticdatagrid actioncolumn": {
+                itemclick: this.handleActionColumn
+            },
+            "patentcheckgrid actioncolumn": {
+                itemclick: this.handlePatentcheck
+            },
+             "patentuncheckgrid actioncolumn": {
+                itemclick: this.handlePatentuncheck
+            },
+            "papercheckgrid actioncolumn": {
+                itemclick: this.handlePapercheck
+            },
+            "paperuncheckgrid actioncolumn": {
+                itemclick: this.handlePaperuncheck
+            },
+            "teachingcheckgrid actioncolumn": {
+                itemclick: this.handleTeachingcheck
+            },
+            "teachinguncheckgrid actioncolumn": {
+                itemclick: this.handleTeachinguncheck
+            },
+            "subjectcheckgrid actioncolumn": {
+                itemclick: this.handleSubjectcheck
+            },
+             "subjectuncheckgrid actioncolumn": {
+                itemclick: this.handleSubjectuncheck
+            }
+            
+             
+            /*,
+            "citiesgrid button[itemId=clearGrouping]": {
+                toggle: this.onButtonToggleClearGrouping
+            }*/
+        });
+
+        this.listen({
+            store: {
+                '#staticDataAbstract': {
+                    write: this.onStoreSync
+                }
+            }
+        });
+
+        if (!Ext.getStore('paper')) {
+            Ext.create('keyan.store.staticData.Paper');
+        }
+
+       /* if (!Ext.getStore('languages')) {
+            Ext.create('keyan.store.staticData.Languages').load();
+        }*/
+
+        if (!Ext.getStore('patent')) {
+            Ext.create('keyan.store.staticData.Patent');
+        }
+
+        if (!Ext.getStore('teaching')) {
+            Ext.create('keyan.store.staticData.Teaching');
+        }
+         if (!Ext.getStore('subject')) {
+            Ext.create('keyan.store.staticData.Subject');
+        }
+       /*  if (!Ext.getStore('papercheck')) {
+            Ext.create('keyan.store.staticData.PaperCheck');
+        }*/
+    },
+
+    onStoreSync: function(store, operation, options){
+    	keyan.util.Alert.msg('成功!', '你的修改已经被保存。');
+      
+    },
+
+    render: function(component, options) {
+        component.getStore().load();  
+
+       /* if (component.xtype === 'citiesgrid' && component.features.length > 0){
+            if (component.features[0].ftype === 'grouping'){
+                component.down('toolbar#topToolbar').add([
+                    {
+                        xtype: 'tbseparator'
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'clearGrouping',
+                        text: 'Group by Country: ON',
+                        iconCls: 'grouping',
+                        enableToggle: true,
+                        pressed: true
+                    }
+                ]);
+            }
+        }     */
+    },
+
+    onEdit: function(editor, context, options) {
+        context.record.set('last_update', new Date());
+    },
+    onButtonClickUploadCancel: function(button, e, options) {
+        button.up('window').hide();
+    },
+    onButtonClickAdd: function (button, e, options) {
+    	var grid = button.up('staticdatagrid'),
+    	store = grid.getStore(),
+    	modelName = store.getProxy().getModel().modelName,
+    	cellEditing = grid.getPlugin('cellplugin');
+    	
+    	store.insert(0, Ext.create(modelName, {
+    		
+    		last_update: new Date()
+    	}));
+
+    	cellEditing.startEditByPosition({row: 0, column: 1});
+    },
+  
+    onButtonClickSave: function (button, e, options) {
+    	 var grid = button.up('staticdatagrid');
+         store = grid.getStore();
+    	 var found = false;
+         Ext.each(store.getRange(), function(rec) {
+             rec.get('isValid') == false ? found = true : found ;  
+         });
+         
+         if (found) {
+        	 Ext.Msg.alert('提示',"该项数据不能为空");
+         } else {
+        	 
+        	 Ext.Msg.alert("提示", "数据更新成功！");
+        	 button.up('staticdatagrid').getStore().sync();
+         }
+    	//var cm = new Ext.grid.ColumnModel;
+    /*	
+    	var records = store.getModifiedRecords();
+    	  if (records.length == 0){
+            alert("没有数据");
+            return false;
+        }*/
+        /*if(records.length<1){
+          return ;
+         }
+        for(var j=0;j<records.length;j++){
+           var record = records[j];//得到一个record
+           var fields = record.fields.keys;//fields里面是record的属性数组
+             for(var i = 0 ;i<fields.length;i++){//检测record的每个字段值是否合法   //根据fields里面的属性 检测每一个record
+                var name = fields[i];
+                var value = record.data[name];//根据record得到属性值
+                
+               // var cm = grid.getColumnModel();
+               // var colIndex = cm.findColumnIndex(name);//根据名称找到它在grid所在的列
+                var colIndex =record.get(name)
+              //  var colIndex =records.columns[name];
+                if(colIndex == -1)continue;//如果不在grid列里面进行下一次循环
+                   var rowIndex = store.indexOfId(record.id);//得到当前验证属性的行
+                     if(null!=cm.getCellEditor(colIndex)){
+                        cm.getCellEditor(colIndex).field.reset();//因为field中还保存着数据 只是没有显示出来，
+                   //当验证record的时候field会把record中属性的空值替换成field的值 那么allowblank=false验证失败
+                        var editor = cm.getCellEditor(colIndex).field;//得到每一个editor的Ext.form.field对象。利用field进行验证
+                          if(!editor.validateValue(value)){
+                              Ext.Msg.alert("提示","数据不完整",function(){
+                              grid.startEditing(rowIndex,colIndex);
+                          });
+                    return false;
+                    }
+                }
+            }
+        }*/
+    	/*var modified=store.getModifiedRecords();
+  	   var modrows=modified.slice(0);
+  	   var flag=true;
+       for(var i=0;i<modrows.length;i++){
+           var record=modrows[i];
+           var fields=record.fields.keys;
+           for(var j =0 ;j<fields.length;j++){
+           var name=fields[j];
+           var value=record.data[name];*/
+          // var colIndex=record.get(name)
+           //var colIndex=cm.findColumnIndex(name);
+          // var rowIndex=store.indexOfId(record.id);
+          // var editor= grid.getSelectionModel().getCellEditor(colIndex).field;
+          // if(! editor.validateValue(value)){
+           //      Ext.Msg.alert('','请确保输入的数据正确!',function(){
+
+         //            grid.startEditing(rowIndex,colIndex);
+
+         //  })
+         //   return ;
+          /* if(null==value){
+           	 flag=false;
+           	 Ext.Msg.alert('','请确保输入的数据正确!',function(){
+             grid.startEditing(rowIndex,colIndex);
+             
+           })
+          }
+       }
+       }
+      // if(flag)
+    	
+    	button.up('staticdatagrid').getStore().sync({
+    		
+    	success: function(response) {
+    
+               Ext.Msg.alert("提示", "数据更新成功！", function() { store.reload(); });
+    	  
+    	  },
+    	  failure:function(e,opt){
+    	  	 Ext.Msg.alert('提示',"保存数据失败！,输入数据不能为空");
+    	  }
+    	})*/
+    	
+    
+    	
+    },
+
+    onButtonClickCancel: function (button, e, options) {
+    	button.up('staticdatagrid').getStore().reload();
+    },
+
+    onButtonClickClearFilter: function (button, e, options) {
+    	button.up('staticdatagrid').filters.clearFilters();
+    },
+   onButtonClickAllClearFilter: function (button, e, options) {
+    	button.up('abstractallkeyangrid').filters.clearFilters();
+    },
+   
+    handleActionColumn: function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('staticdatagrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'delete'){
+            store.remove(rec);
+            Ext.Msg.alert("提示",'你确认删除吗？确定后必须点击上部“保存更改”按钮才能完成删除！');
+        }   
+        
+    },
+    onButtonClickPrint:function(button,e,options){
+ 	Ext.ux.grid.Printer.printAutomatically=false;
+ 	Ext.ux.grid.Printer.print(button.up('abstractallkeyangrid'));
+ },
+    handlePatentcheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('patentcheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'check'){
+        	
+        	if(confirm("你是否确认该成果通过审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/PatentCheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('patent_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","审核成功");
+         	   	store.reload();
+         	     }
+         	   else{
+         	   	Ext.Msg.alert("提示","审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+         }
+        },
+         handlePatentuncheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('patentuncheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'uncheck'){
+        	
+        	if(confirm("你是否确认撤销该成果审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/PatentUncheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('patent_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","撤销审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","撤销审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    },
+        handlePapercheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('papercheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'check'){
+        	
+        	if(confirm("你是否确认该成果通过审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/PaperCheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('paper_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    },
+     handlePaperuncheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('paperuncheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'uncheck'){
+        	
+        	if(confirm("你是否确认该成果撤销审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/PaperUncheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('paper_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","撤销审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","撤销审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    },
+      handleTeachingcheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('teachingcheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'check'){
+        	
+        	if(confirm("你是否确认该成果通过审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/TeachingCheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('teaching_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    }, handleTeachinguncheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('teachinguncheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'uncheck'){
+        	
+        	if(confirm("你是否确认撤销该成果审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/TeachingUncheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('teaching_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","撤销审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","撤销审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    },
+    
+     handleSubjectcheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('subjectcheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'check'){
+        	
+        	if(confirm("你是否确认该成果通过审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/SubjectCheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('subject_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    },
+    handleSubjectuncheck:function(column, action, view, rowIndex, colIndex, item, e) {
+        var store = view.up('subjectuncheckgrid').getStore(),
+        rec = store.getAt(rowIndex);
+
+        if (action == 'uncheck'){
+        	
+        	if(confirm("你是否确认撤销该成果审核")){
+        		
+        	    Ext.Ajax.request({
+         	    url:'servlet/SubjectUncheck',
+         	    method:'post',
+         	    params:{
+         		  id:rec.get('subject_id')
+         	    },
+         	   success:function(conn,response,options,eOpts){
+         	   	var result=Ext.JSON.decode(conn.responseText,true);
+         	   	if(result.success){
+         	   	Ext.Msg.alert("提示","撤销审核成功");
+         	   	store.reload();
+         	   }
+         	   else{
+         	   	Ext.Msg.alert("提示","撤销审核失败!");
+         	   }
+         	   }
+         	});
+        	}
+        }
+    }
+   
+});
+
+  

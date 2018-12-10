@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.text.ParsePosition"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateCallback"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.Restrictions"/>
+<fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
+<fullyQualifiedTypeName name="com.zs.hibernate.beans.LqcxDAO"/>
+<fullyQualifiedTypeName name="com.zs.hibernate.beans.Lqcx"/>
+<fullyQualifiedTypeName name="com.zs.hibernate.beans.KdcxDAO"/>
+<fullyQualifiedTypeName name="com.zs.hibernate.beans.Kdcx"/>
+</qualifiedTypeNameHistroy>

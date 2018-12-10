@@ -1,0 +1,86 @@
+
+Ext.define('keyansys.controller.Menu', {
+    extend: 'Ext.app.Controller',
+
+    models: [
+        'menu.Root',
+        'menu.Item'
+    ],/*
+    stores: [
+        'Menu'
+    ],*/
+    views: [
+        'menu.Accordion',
+        'menu.Item'
+    ],
+
+    refs: [
+        {
+            ref: 'mainPanel',
+            selector: 'mainpanel'
+        }
+    ],
+
+
+    onPanelRender: function(abstractcomponent, options) {
+        this.getMenuStore().load(function(records, op, success){
+
+            var menuPanel = Ext.ComponentQuery.query('mainmenu')[0];
+       
+            Ext.each(records, function(root){
+
+                var menu = Ext.create('keyansys.view.menu.Item',{
+                	//title:"xxxxx",
+                	title: root.get('text'),
+                    //title: translations[root.get('text')],
+                    iconCls: root.get('iconCls')
+                });
+
+                Ext.each(root.items(), function(itens){
+
+                    Ext.each(itens.data.items, function(item){
+
+                        menu.getRootNode().appendChild({
+                           // text: translations[item.get('text')],
+                             text: item.get('text'),
+                           
+                        	//text:"yyyyy",
+                            leaf: true, 
+                            iconCls: item.get('iconCls'),
+                            id: item.get('id'),
+                          //  className:'panel'
+                            className: item.get('className') 
+                        });
+                    });  
+                });
+
+                menuPanel.add(menu);
+            }); 
+        });
+    },
+
+    onTreepanelSelect: function(selModel, record, index, options) {
+        //console.log(record.raw.className);
+
+      
+    },
+
+    onTreepanelItemClick: function(view, record, item, index, event, options){
+        this.onTreepanelSelect(view, record, index, options);
+    },
+
+    init: function(application) {
+    	
+        this.control({
+            "mainmenu": {
+                render: this.onPanelRender
+            },
+            "mainmenuitem": {
+                select: this.onTreepanelSelect,
+                itemclick: this.onTreepanelItemClick
+            }
+        });
+    }
+
+});
+

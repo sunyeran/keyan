@@ -1,0 +1,39 @@
+Ext.define('zs.view.manage.Manage', {
+    extend: 'Ext.window.Window',
+    xtype: 'manage',
+   
+    requires: [
+        'Ext.layout.container.Table',
+    
+              'zs.view.login.LoginController',
+              'Ext.form.Panel'
+              ],
+    controller:'login',
+   
+    autoShow: true,
+    width: 660,
+    width: 500,
+    height: 300,
+    title: "管理员后台管理",
+    layout: {
+        type: 'vbox',
+        
+        align: 'stretch'
+    },
+   
+    items: [{
+        xtype: 'panel',
+        collapsed: true,
+        title: '导入考生信息',
+        flex: 2
+    },{
+        xtype: 'panel',
+        collapsed: true,
+        title: '导入快递信息',
+        flex: 1
+    },{
+        xtype: 'panel',
+        title: '修改提示信息',
+        flex: 1
+    }]
+});

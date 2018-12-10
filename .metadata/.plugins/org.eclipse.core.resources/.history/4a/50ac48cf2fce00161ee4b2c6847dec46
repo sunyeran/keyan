@@ -1,0 +1,18 @@
+Ext.define("keyansys.view.header.Main",{
+	 extend: "Ext.toolbar.Toolbar",
+
+	    cls: 'toolbar-btn-shadow',
+
+	    xtype: 'app-header',
+
+	    cls:'app-header',//css
+	    height: 65,
+	    layout: {
+	        type: 'hbox',
+	        align: 'middle'
+	    },
+	    items:[{
+	        xtype: 'component',
+	        cls: 'app-header-logo'
+	    }]
+	});

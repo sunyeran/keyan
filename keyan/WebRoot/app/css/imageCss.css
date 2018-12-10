@@ -1,0 +1,19 @@
+.keyan-imageList{float:left;display:block;width:180px;height:220px;padding:20px;background-color: #D3E1F1;}
+.keyan-imageList p{
+	text-align:center;
+	overflow:hidden;
+	line-height:20px;
+}
+.ellipsis{-o-text-overflow:ellipsis;text-overflow:ellipsis;-moz-binding: url('ellipsis.xml#ellipsis');white-space:nowrap;overflow:hidden;}
+.keyan-imageList-selected
+{
+    background-color: #D3E1F1;
+}
+.image-overItem
+{
+    background-color: #E7E7E7;
+}
+.x-view-selector {
+    position: absolute;
+    border: 1px dotted #3399BB;
+}

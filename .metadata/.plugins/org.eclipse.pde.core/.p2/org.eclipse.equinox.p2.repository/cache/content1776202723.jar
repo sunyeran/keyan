@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+			
+	
+	<link rel="pingback" href="https://www.genuitec.com/xmlrpc.php" />
+
+		<!--[if lt IE 9]>
+	<script src="https://resources.cloud.genuitec.com/wp-content/themes/Divi/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<title>MyEclipse Download : Java EE IDE for Individuals or Teams - Genuitec</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v3.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Choose a MyEclipse download for the latest stable or Continuous Integration release. Download for an individual or a MyEclipse Delivery Hub for a team."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://www.genuitec.com/products/myeclipse/download/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="MyEclipse Download : Java EE IDE for Individuals or Teams - Genuitec" />
+<meta property="og:description" content="Choose a MyEclipse download for the latest stable or Continuous Integration release. Download for an individual or a MyEclipse Delivery Hub for a team." />
+<meta property="og:url" content="https://www.genuitec.com/products/myeclipse/download/" />
+<meta property="og:site_name" content="Genuitec" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Choose a MyEclipse download for the latest stable or Continuous Integration release. Download for an individual or a MyEclipse Delivery Hub for a team." />
+<meta name="twitter:title" content="MyEclipse Download : Java EE IDE for Individuals or Teams - Genuitec" />
+<meta name="twitter:site" content="@genuitec" />
+<meta name="twitter:creator" content="@genuitec" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Genuitec &raquo; Feed" href="https://www.genuitec.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Genuitec &raquo; Comments Feed" href="https://www.genuitec.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Genuitec &raquo; MyEclipse Download : Java EE IDE for Individuals or Teams Comments Feed" href="https://www.genuitec.com/products/myeclipse/download/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.genuitec.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="divi-child v.1.0" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='selectize_css-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/genuitec-metrics/css/selectize.bootstrap3.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery_css-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/genuitec-metrics/css/jquery-ui.min.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genuitec_metrics_css-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/genuitec-metrics/css/genuitec-metrics.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='validate-engine-css-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/wysija-newsletters/css/validationEngine.jquery.css?ver=2.6.19' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=2.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='product-style-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/product_style.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='me-mobile-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/me-mobile.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='lato-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic&#038;ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fancy-box-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/jquery.fancybox.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='basic-style-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/basic.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genuitec-style-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/genuitec.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genuitec-mobile-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/css/genuitec-mobile.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.10-6063' type='text/css' media='screen' />
+<link rel='stylesheet' id='bp-legacy-css-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.min.css?ver=2.6.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='ssbaFont-css'  href='//fonts.googleapis.com/css?family=Indie+Flower&#038;ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='page-list-style-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/sitemap/css/page-list.css?ver=4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='toc-screen-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1509' type='text/css' media='all' />
+<link rel='stylesheet' id='wpmenucart-icons-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce-menu-bar-cart/css/wpmenucart-icons.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpmenucart-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce-menu-bar-cart/css/wpmenucart-main.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='chosen-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/wp-job-manager/assets/css/chosen.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/wp-job-manager/assets/css/frontend.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='inbound-shortcodes-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/leads//shared/shortcodes/css/frontend-render.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-menu-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/style_menu.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-divi-menu-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/style_divi_menu.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/style.css?ver=2.7.3' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-css-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/Divi/epanel/shortcodes/css/shortcodes.css?ver=2.7.3' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/Divi/epanel/shortcodes/css/shortcodes_responsive.css?ver=2.7.3' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/styles/magnific_popup.css?ver=2.7.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/jquery-updater/js/jquery-2.1.4.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var inbound_settings = {"post_id":"11636","variation_id":"0","ip_address":"218.69.255.86","wp_lead_data":{"lead_id":null,"lead_email":null,"lead_uid":null},"admin_url":"https:\/\/www.genuitec.com\/wp-admin\/admin-ajax.php","track_time":"2017\/01\/04 0:33:02","post_type":"page","page_tracking":"on","search_tracking":"on","comment_tracking":"off","custom_mapping":[],"inbound_track_exclude":"","inbound_track_include":"","is_admin":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/leads//shared/assets/js/frontend/analytics/inboundAnalytics.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/genuitec-metrics/js/jquery-ui.min.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.7.1","is_admin":"0","ajaxurl":"https:\/\/www.genuitec.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=2.7.1'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/js/sdc-mobile.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/js/jquery.fancybox.pack.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_Confirm = {"are_you_sure":"Are you sure?"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-core/js/confirm.min.js?ver=2.6.2'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=2.6.2'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=2.6.2'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-core/js/jquery-cookie.min.js?ver=2.6.2'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-core/js/jquery-scroll-to.min.js?ver=2.6.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_DTheme = {"accepted":"Accepted","close":"Close","comments":"comments","leave_group_confirm":"Are you sure you want to leave this group?","mark_as_fav":"Favorite","my_favs":"My Favorites","rejected":"Rejected","remove_fav":"Remove Favorite","show_all":"Show all","show_all_comments":"Show all comments for this thread","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","view":"View"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/buddypress/bp-templates/bp-legacy/js/buddypress.min.js?ver=2.6.2'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/jquery-updater/js/jquery-migrate-1.2.1.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='https://www.genuitec.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.genuitec.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://resources.cloud.genuitec.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<meta name="generator" content="WooCommerce 2.6.4" />
+<link rel='shortlink' href='https://www.genuitec.com/?p=11636' />
+<link rel="alternate" type="application/json+oembed" href="https://www.genuitec.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.genuitec.com%2Fproducts%2Fmyeclipse%2Fdownload%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.genuitec.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.genuitec.com%2Fproducts%2Fmyeclipse%2Fdownload%2F&#038;format=xml" />
+
+	<script type="text/javascript">var ajaxurl = 'https://www.genuitec.com/wp-admin/admin-ajax.php';</script>
+
+<style type="text/css">	.ssba {
+									
+									
+									
+									
+								}
+								.ssba img
+								{
+									width: 35px !important;
+									padding: 6px;
+									border:  0;
+									box-shadow: none !important;
+									display: inline !important;
+									vertical-align: middle;
+								}
+								.ssba, .ssba a
+								{
+									text-decoration:none;
+									border:0;
+									background: none;
+									font-family: Indie Flower;
+									font-size: 	20px;
+									
+									font-weight: bold;
+								}.ssba {
+display: inline-block;
+}</style><style type="text/css">div#toc_container {background: #f9f9f9;border: 1px solid #aaaaaa;}div#toc_container p.toc_title a,div#toc_container ul.toc_list a {color: #666666;}div#toc_container p.toc_title a:hover,div#toc_container ul.toc_list a:hover {color: #666666;}div#toc_container p.toc_title a:hover,div#toc_container ul.toc_list a:hover {color: #666666;}div#toc_container p.toc_title a:visited,div#toc_container ul.toc_list a:visited {color: #666666;}</style><!-- Child theme custom CSS created by Divi Children - http://divi4u.com/divi-children-plugin/ -->
+<style type="text/css" media="screen">
+ #footer-widgets {padding-top:;}
+ .footer-widget {margin-bottom:;}
+ #main-footer { background-color:!important;}
+ .footer-widget .title {color:!important;}
+ .footer-widget .title {font-size:;}
+ .footer-widget .title {padding-bottom:;}
+ .footer-widget, .footer-widget li, .footer-widget li a {color:!important; font-size:;}
+ .footer-widget li a:hover, #footer-widgets .et_pb_widget li a:hover {color:!important;}
+ .footer-widget li:before {border-color:!important;}
+ #footer-bottom { background-color:;}
+ #footer-bottom {padding:15px 0 5px;}
+ #footer-info, #footer-info a {color:;}
+ #footer-info, #footer-info a {font-size:;}
+ #footer-bottom ul.et-social-icons li a {color:;}
+ #footer-bottom ul.et-social-icons li a:hover {color:!important;}
+ #footer-bottom ul.et-social-icons li a {font-size:;}
+ #footer-bottom ul.et-social-icons li {margin-left:-6px;}
+ #sidebar .et_pb_widget {margin: 0 0  ;}
+ #sidebar h4.widgettitle {color:;}
+ #sidebar h4.widgettitle {font-size:;}
+ #sidebar li, #sidebar li a {font-size:;}
+ #sidebar li, #sidebar li a {color:;}
+ #sidebar li a:hover {color:!important;}
+ .custom_rows_section_1 {padding:  0  0;}
+ .custom_rows_section_1 .et_pb_row {background:rgba(0,0,0,);}
+ .custom_rows_section_1 .et_pb_column {margin-right: 60px; margin-bottom: -35px;}
+ .custom_rows_section_1 .et_pb_row {padding: px; margin-top: ; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+ .custom_rows_section_2 {padding:  0  0;}
+ .custom_rows_section_2 .et_pb_row {background:rgba(0,0,0,);}
+ .custom_rows_section_2 .et_pb_column {margin-right: 60px; margin-bottom: -35px;}
+ .custom_rows_section_2 .et_pb_row {padding: px; margin-top: ; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+ .custom_fullwidth_header_1 {padding:  0  0;}
+ .custom_fullwidth_header_1 h1 {font-size: ; color: !important;}
+ .et_pb_fullwidth_header_subhead {font-size: ; color: ;}
+</style>
+<!-- End Child theme custom CSS -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />		<style id="theme-customizer-css">
+																																				
+		
+																										
+		
+																														
+		@media only screen and ( min-width: 981px ) {
+																																																			
+					}
+		@media only screen and ( min-width: 1350px) {
+			.et_pb_row { padding: 27px 0; }
+			.et_pb_section { padding: 54px 0; }
+			.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper { padding-top: 81px; }
+			.et_pb_section.et_pb_section_first { padding-top: inherit; }
+			.et_pb_fullwidth_section { padding: 0; }
+		}
+		@media only screen and ( max-width: 980px ) {
+																				}
+		@media only screen and ( max-width: 767px ) {
+														}
+	</style>
+
+	
+	
+	<style id="module-customizer-css">
+			</style>
+
+	<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1117955491577715');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1117955491577715&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code --></head>
+<body class="page page-id-11636 page-parent page-child parent-pageid-8465 page-template page-template-page_templates page-template-myeclipse-download page-template-page_templatesmyeclipse-download-php et_pb_button_helper_class et_fixed_nav et_show_nav et_cover_background et_secondary_nav_enabled et_secondary_nav_only_menu et_pb_gutter et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_right_sidebar unknown divi-child singular no-js">
+	<div id="page-container">
+
+			<div id="top-header">
+			<div class="container clearfix">
+
+				<p id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb_last">Download</span></span></span></p>
+			
+				<div id="et-secondary-menu">
+				<ul id="et-secondary-nav" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37080"><a href="/buy-now/">Buy Now</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37081"><a href="/forums/">Forums</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37082"><a>Learning Centers</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37084"><a href="https://www.genuitec.com/products/myeclipse/learning-center/">MyEclipse IDE</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499091"><a href="https://www.genuitec.com/products/sdc/learning-center/">Secure Delivery Center</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396601"><a href="https://www.genuitec.com/products/webclipse/learning-center/">Webclipse</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-503488"><a href="https://www.genuitec.com/products/angular-ide/learning-center/">Angular IDE</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392542"><a href="https://www.genuitec.com/support/help/">Website &#038; Portal</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37087"><a>Technologies</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-485370"><a href="https://www.genuitec.com/products/myeclipse/features/javaee/">Java EE Development</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37098"><a href="https://www.genuitec.com/products/myeclipse/features/websphere/">WebSphere App Coding</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37100"><a href="https://www.genuitec.com/products/myeclipse/features/spring/">Spring Tools &#038; IDE</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482590"><a href="https://www.genuitec.com/tech/jsjet-javascript-in-eclipse/">JavaScript with JSjet</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37101"><a href="https://www.genuitec.com/products/myeclipse/features/rest/">REST Web Services</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493408"><a href="https://www.genuitec.com/products/myeclipse/web/">Web Development Tools</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388564"><a href="https://www.genuitec.com/products/myeclipse/features/maven/">Maven Enablement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456020"><a href="https://www.genuitec.com/tech/slack-for-eclipse/">Eclipse Code Sharing for Slack</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473677"><a href="https://www.genuitec.com/tech/live-preview/">Live Preview</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-485371"><a href="https://www.genuitec.com/products/myeclipse/features/database-and-persistence/">Database &#038; Persistence</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-470084"><a href="/technologies/">View All</a></li>
+</ul>
+</li>
+<li><a href="/register/">Register</a></li><li><a rel="nofollow" href="https://www.genuitec.com/wp-login.php?redirect_to=%2Fproducts%2Fmyeclipse%2Fdownload%2F">Log In</a></li><li class="wpmenucartli wpmenucart-display-standard" id="wpmenucartli"><a class="wpmenucart-contents empty-wpmenucart" style="display:none">&nbsp;</a></li></ul><a href="https://www.genuitec.com/cart/" class="et-cart-info">
+				<span>0 Items</span>
+			</a>				</div> <!-- #et-secondary-menu -->
+
+			</div> <!-- .container -->
+		</div> <!-- #top-header -->
+	
+		<header id="main-header" data-height-onload="66">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://www.genuitec.com/">
+						<img src="https://resources.cloud.genuitec.com/wp-content/uploads/2015/04/Genuitec-LogoBlue-20151.png" alt="Genuitec" id="logo" data-height-percentage="54" />
+					</a>
+				</div>
+				<div id="et-top-navigation" data-height="66" data-fixed-height="40">
+					<nav id="top-menu-nav">
+					<ul id="top-menu" class="nav"><li id="menu-item-452183" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children current-menu-item menu-item-452183"><a href="https://www.genuitec.com/products/myeclipse/">MyEclipse</a>
+<ul class="sub-menu">
+	<li id="menu-item-452187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452187"><a href="https://www.genuitec.com/products/myeclipse/features/">Features</a></li>
+	<li id="menu-item-452188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452188"><a href="https://www.genuitec.com/products/myeclipse/buy/">Buy</a></li>
+	<li id="menu-item-452189" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11636 current_page_item menu-item-452189"><a href="https://www.genuitec.com/products/myeclipse/download/">Download</a></li>
+	<li id="menu-item-452190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452190"><a href="https://www.genuitec.com/products/myeclipse/learning-center/">Learning Center</a></li>
+	<li id="menu-item-452191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-452191"><a href="https://www.genuitec.com/forums/topics/myeclipse/">Forums</a></li>
+	<li id="menu-item-455163" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455163"><a href="https://www.genuitec.com/member-home/">Member Center</a></li>
+</ul>
+</li>
+<li id="menu-item-36517" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-36517"><a href="https://www.genuitec.com/products/">Products</a>
+<ul class="sub-menu">
+	<li id="menu-item-30338" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-30338"><a href="https://www.genuitec.com/products/myeclipse/">MyEclipse IDE</a></li>
+	<li id="menu-item-30339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30339"><a href="https://www.genuitec.com/products/sdc/">Secure Delivery Center</a></li>
+	<li id="menu-item-396596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396596"><a href="https://www.genuitec.com/products/webclipse/">Webclipse</a></li>
+	<li id="menu-item-501741" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-501741"><a href="https://www.genuitec.com/products/angular-ide/">Angular IDE</a></li>
+</ul>
+</li>
+<li id="menu-item-36549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36549"><a href="https://www.genuitec.com/company/">Our Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-36563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36563"><a href="https://www.genuitec.com/company/">About</a></li>
+	<li id="menu-item-36608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36608"><a href="https://www.genuitec.com/company/careers/">Careers</a></li>
+	<li id="menu-item-36597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36597"><a href="https://www.genuitec.com/company/contact/">Contact Us</a></li>
+</ul>
+</li>
+<li id="menu-item-30430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30430"><a href="https://www.genuitec.com/community/">Community</a>
+<ul class="sub-menu">
+	<li id="menu-item-452208" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-452208"><a href="https://www.genuitec.com/community/blog/">Blog</a></li>
+	<li id="menu-item-5984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5984"><a href="https://www.genuitec.com/community/press/">Press</a></li>
+	<li id="menu-item-6074" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6074"><a href="https://twitter.com/Genuitec">Twitter</a></li>
+</ul>
+</li>
+<li id="menu-item-36722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36722"><a href="https://www.genuitec.com/support/">Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-5987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5987"><a href="https://www.genuitec.com/support/advanced/">Genuitec Advanced Support Services</a></li>
+</ul>
+</li>
+</ul>					</nav>
+
+					
+										<div id="et_top_search">
+						<span id="et_search_icon"></span>
+					</div>
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://www.genuitec.com/">
+					<input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+
+		<div id="et-main-area">
+<style>
+	#warningIE{
+		margin: 0px;
+		border-radius: 0px;
+	}
+	.lightbox_lan {
+		width: 500px;
+		padding: 0px;
+		position: fixed;
+		right: 1%;
+		margin-left: -250px;
+		background: #fff;
+		/* text-align: right; */
+		top: 110px;
+		font-family: "proxima-nova-soft", sans-serif;
+		z-index: 4;
+		display: none;
+		border: 1px;
+
+	}
+
+	.lightbox_lan h2 {
+		margin: 0;
+		font-size: 2rem;
+		padding: 40px 20px;
+	}
+	.sep_buttons {
+		background: #f7f7f7;
+		border-top: 1px solid #dedede;
+		padding: 10px 15px;
+/*		height: 100px;*/
+		text-align: center;
+	}
+
+	.sep_buttons a {
+		background: #000;
+		padding: 5px;
+		font-size: 14px;
+		line-height: 2.3;
+		color: #fff;
+/*		width: 210px;*/
+		display: inline-block;
+		text-decoration: none;
+		border-radius: 7px;
+		height: 40px;
+/*		float: left;*/
+	}
+
+	.sep_buttons a.blue_button {
+		background: #5776be;
+		box-shadow: 0px 3px 0 #3f5b9d;
+		text-align: center;
+	}
+	.content_box{
+		background-color: #ffebe8;
+	}
+
+</style>
+<div id="warningIE" class="lightbox_lan" style="
+    display: none;
+">
+	<div class="content_box">
+		<div style="margin: 0;
+font-size: 15px;
+padding: 10px 10px">Your Internet Explorer version is not compatible with our shopping cart system. Please use version 9 or higher to avoid problems with your order(s). <a class="warning_hide" href="#">Close</a></div>
+
+	</div>
+
+</div>
+
+
+
+<div id="main-content">
+
+
+<script type="text/javascript" src="//use.typekit.net/cfk0etc.js"></script>
+<script type="text/javascript">
+
+	try {
+		Typekit.load();
+	} catch(e) {
+	}
+
+
+	var OSName="win";
+	if (navigator.appVersion.indexOf("Win")!=-1) OSName="win";
+	if (navigator.appVersion.indexOf("Mac")!=-1) OSName="mac";
+	if (navigator.appVersion.indexOf("X11")!=-1) OSName="lin";
+	if (navigator.appVersion.indexOf("Linux")!=-1) OSName="lin";
+
+</script>
+
+<script>
+	var installs = {"1":{"name":"2017 CI 1","lin":[{"file_id":"729","label":"Bundled Installer","os":"lin","size":"1650548890","md5":"6ad67848d582c0b134ff6aa8f4fbdc6a","filename":"myeclipse-2017-ci-1-offline-installer-linux.run"},{"file_id":"732","label":"Online Installer","os":"lin","size":"23466066","md5":"73f778d6b07170725427736288ad7b26","filename":"myeclipse-2017-ci-1-online-installer-linux.run"}],"mac":[{"file_id":"730","label":"Bundled Installer","os":"mac","size":"1455371487","md5":"1cb7ade9b8937c2a58d403fd5657e5d6","filename":"myeclipse-2017-ci-1-offline-installer-macosx.dmg"},{"file_id":"733","label":"Online Installer","os":"mac","size":"22724278","md5":"f2bca48c1123693a54519e135d3b1f11","filename":"myeclipse-2017-ci-1-online-installer-macosx.dmg"}],"win":[{"file_id":"731","label":"Bundled Installer","os":"win","size":"1649948448","md5":"6710e4ffb317fa7aa390c152458e3d4e","filename":"myeclipse-2017-ci-1-offline-installer-windows.exe"},{"file_id":"734","label":"Online Installer","os":"win","size":"25406912","md5":"545db2764fa290aca53d9d99b415d90d","filename":"myeclipse-2017-ci-1-online-installer-windows.exe"}]},"2":{"name":"2016 CI 7","lin":[{"file_id":"678","label":"Bundled Installer","os":"lin","size":"1674309786","md5":"9d127044fb963ae7feb8d24b156633d1","filename":"myeclipse-2016-ci-7-offline-installer-linux.run"},{"file_id":"681","label":"Online Installer","os":"lin","size":"21905490","md5":"e60df0fc34d27e6987833fb658ccf369","filename":"myeclipse-2016-ci-7-online-installer-linux.run"}],"mac":[{"file_id":"679","label":"Bundled Installer","os":"mac","size":"1432776841","md5":"4ac2b4df4a852df10e2eaf8dd2b28644","filename":"myeclipse-2016-ci-7-offline-installer-macosx.dmg"},{"file_id":"682","label":"Online Installer","os":"mac","size":"21218511","md5":"c8b00b5f29288debc85683aa46680c53","filename":"myeclipse-2016-ci-7-online-installer-macosx.dmg"}],"win":[{"file_id":"680","label":"Bundled Installer","os":"win","size":"1630948120","md5":"2a21592ae40a0aa32d8c2d7a2f74c81a","filename":"myeclipse-2016-ci-7-offline-installer-windows.exe"},{"file_id":"683","label":"Online Installer","os":"win","size":"23774880","md5":"57c9c8cbbef9c5c84921c52733e61de9","filename":"myeclipse-2016-ci-7-online-installer-windows.exe"}]},"3":{"name":"2016 Stable 1.0","lin":[{"file_id":"648","label":"Bundled Installer","os":"lin","size":"1670467738","md5":"69c09829d88a70bb187f1c5d6f0c0470","filename":"myeclipse-2016-1.0-offline-installer-linux.run"},{"file_id":"651","label":"Online Installer","os":"lin","size":"21889106","md5":"7fc935b4f3c6c4824156308064a00ca7","filename":"myeclipse-2016-1.0-online-installer-linux.run"}],"mac":[{"file_id":"649","label":"Bundled Installer","os":"mac","size":"1430956717","md5":"ea28a01f65fe5879ac2bb70d61e52bb2","filename":"myeclipse-2016-1.0-offline-installer-macosx.dmg"},{"file_id":"652","label":"Online Installer","os":"mac","size":"21241240","md5":"2d6a90d68444c4d3e59e1cecc2fd675a","filename":"myeclipse-2016-1.0-online-installer-macosx.dmg"}],"win":[{"file_id":"650","label":"Bundled Installer","os":"win","size":"1627104776","md5":"891a3a4ed936f1f42557ea7d511c78d9","filename":"myeclipse-2016-1.0-offline-installer-windows.exe"},{"file_id":"653","label":"Online Installer","os":"win","size":"23763704","md5":"47ff0a012b699cb36fcd1898923e652c","filename":"myeclipse-2016-1.0-online-installer-windows.exe"}]}};var recommended = {"id":"1","nice_name":"2017 CI 1","lin":{"file_id":"729","label":"Bundled Installer","os":"lin","size":"1.54gb","md5":"6ad67848d582c0b134ff6aa8f4fbdc6a","filename":"myeclipse-2017-ci-1-offline-installer-linux.run","nice_os":"Linux","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/get\/?729"},"mac":{"file_id":"730","label":"Bundled Installer","os":"mac","size":"1.36gb","md5":"1cb7ade9b8937c2a58d403fd5657e5d6","filename":"myeclipse-2017-ci-1-offline-installer-macosx.dmg","nice_os":"Mac","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/get\/?730"},"win":{"file_id":"731","label":"Bundled Installer","os":"win","size":"1.54gb","md5":"6710e4ffb317fa7aa390c152458e3d4e","filename":"myeclipse-2017-ci-1-offline-installer-windows.exe","nice_os":"Windows","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/get\/?731"}};var default_id = 3;
+</script>
+<div class="MyEclipse me_download">
+	<div class="content"><div class="flags"><a href="http://www.myeclipsecn.com/" style="font-size:0;">MyEclipse中文官方</a></div></div>
+
+
+<div class="mask_pop"></div>
+<div id="chinese-popup" class="lightbox_lan">
+	<div class="content_box">
+		<div style="margin: 0;
+font-size: 2rem;
+padding: 40px 20px">Are you looking for the Chinese <strong>MyEclipse</strong> pages?</div>
+
+		<div class="sep_buttons">
+			<a id="stay-international" href="javascript:void(0)" class="international blue_button">Stay on the International site</a>
+			<a href="http://www.myeclipsecn.com/" class="chinese red_button">访问中国官网<span>Go to the Chinese site</span></a>
+		</div>
+	</div>
+</div>
+
+<script>
+	(function($){
+		$(document).ready(function(){
+			$("#stay-international").on('click', function(){
+				$.cookie('stay-international', '1', { expires: 7, path: '/' });
+
+				$('.mask_pop').hide();
+				$('#chinese-popup').hide();
+
+			});
+
+			if($.cookie('stay-international') != '1') {
+			$.get('https://www.genuitec.com/tools/recommendchinesesite.php', function (data) {
+					if (data == "1") {
+						$('.mask_pop').show();
+						$('#chinese-popup').show();
+					}
+				});
+
+			}
+
+		});
+	})(jQuery);
+
+</script>
+	<a id="top" class="anchor"></a>
+	<section id="downloadPitch">
+		<div class="content">
+			<h1>Download MyEclipse</h1>
+		</div>
+
+	</section>
+
+	<section id="choose_what">
+		<div class="content">
+			<h2>Do you want to download for an individual or a team?</h2>
+
+			<div class="team inactive">
+				<div class="im_team">
+					Team
+				</div>
+				<!-- <div class="blurb">
+					If you’re a company with lots of developers, you have enterprise-speciﬁc needs. Do you use WebSphere? Do you struggle with keeping team IDEs in sync?
+				</div>-->
+			</div>
+
+			<div class="individual">
+				<div class="im_solo">
+					Individual
+				</div>
+				<!--<div class="blurb">
+					Get the IDE that offers ﬂexibility in choosing the right technology for the job at hand.
+				</div>-->
+			</div>
+
+			<div class="clear"></div>
+		</div>
+
+	</section>
+
+	<section id="myeclipse-download">
+		<div class="content">
+
+			<h2>MyEclipse for Individuals</h2>
+			<div class="downloadSection">
+				<div class="recommendedDownload">
+					<h3>Recommended Download: MyEclipse 
+					<span class="recommended_version"></span>
+					</h3>
+
+					<div class="downloadButton">
+
+
+						<a class="download_recommended" id="downloadIt" href="#" class="buttonOutline">
+							<span class="dIcon">MyEclipse <span class="recommended_version"></span> for <span class="recommended_os"></span></span></a>
+						<small>size: <span class="recommended_size"></span> / md5: <span class="recommended_md5"></span></small>
+					</div>
+
+
+					<div class="description_download">
+						<p>Download the Continuous Integration (CI) stream of MyEclipse to get access to regular feature updates and the latest fixes for MyEclipse.</p>
+<p><span style="color: #ff0000;">All downloads include a free <strong>30 day trial </strong>to learn what MyEclipse can do for you!<br /></span><span style="color: #000080;"><br /></span></p>
+					</div>
+
+					<div class="clear"></div>
+
+				</div>
+				<div class="tailorDownload" style="margin-bottom: 5px;">
+					<h3 style="margin: 0px auto 0;">Tailor your Download of MyEclipse</h3>
+					<p>Check the <a href="https://www.genuitec.com/products/myeclipse/deliverylog/ci/" title="MyEclipse Delivery Log: CI Stream">CI Delivery Log</a> for the latest in MyEclipse, and the <a href="https://www.genuitec.com/products/myeclipse/deliverylog/stable/" title="MyEclipse Delivery Log: Stable Stream">Stable Delivery Log</a> for the updates on the production-grade stream.</p>
+<p><em><strong>Note:</strong> Starting with MyEclipse 2015, a single MyEclipse download includes the Standard, Pro, Blue, Bling and Spring products unified together, activated by license.</em></p>
+
+					<div style="height: 5px;"></div>
+
+					<div class="column version">
+						<h4>Version</h4>
+						<ul id="versions">
+						</ul>
+					</div>
+					<div  class="column os" >
+						<h4>Operating System</h4>
+						<ul id="client_os">
+							<li><input id="i_win" type="radio" name="som_os" data-val="win"> <label for="i_win">Windows</label></li>
+							<li><input id="i_lin" type="radio" name="som_os" data-val="lin" > <label for="i_lin">Linux</label></li>
+							<li><input id="i_mac" type="radio" name="som_os" data-val="mac" > <label  for="i_mac">Mac OS X</label></li>
+						</ul>
+					</div>
+					<div class="column installs" >
+						<h4>Available Downloads</h4>
+						<ul id="installs">
+						</ul>
+					</div>
+					<div class="columnDownload" >
+						<a id="tailored_button" href="#" class="buttonOutline">Download <small></small></a>
+						<small>md5: <span id="md5"></span></small>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<p><em>Not sure if you want the Stable (GA) release or the Continuous Integration stream?</em>  The stable release has less frequent updates while the CI stream has new features that while very functional, are continuing to be tweaked.  Both are great for regular development.</p>
+				<div style="margin-bottom: 5px; margin-top: 25px;">
+					<h3 style="margin: 0px auto 0;">System Requirements for MyEclipse</h3>
+					<ul style="margin-top:20px; list-style: initial; padding-left:15px;">
+						<li><strong>Operating System</strong>:  Windows 7 or later, Mac OS 10.9 or later, or modern Linux</li>
+						<li><strong>Minimum</strong>: 5GB of free disk space with 1 GB of free RAM</li>
+						<li><strong>Recommended</strong>: 10 GB of free disk space with 2 GB of free RAM for optimal performance</li>
+
+					</ul>
+				</div>
+			</div>
+
+	</section>
+
+	<section id="download-teams" style="display:none;">
+		<div class="content">
+			<h2>MyEclipse for Teams</h2>
+			<div class="downloadSection">
+
+
+				<div class="teamInstructions">
+
+					<h3>Is MyEclipse tailored for teams right for you?</h3>
+					<div class="left">
+						<ul>
+							<li>
+								You want to pre-configure MyEclipse with plug-ins and settings
+								<ul>
+									<li>or you want to easily control when team members upgrade MyEclipse.</li>
+								</ul>
+							</li>
+							<li>
+								You want to share software with team members from your own delivery hub*
+								<ul>
+									<li>avoiding heavy downloads from the internet and providing enhaced security.</li>
+								</ul>
+							</li>
+						</ul>
+						<span class="note1"> If you answered <strong>No</strong> to either of these questions, we recommend downloading the <a id="select_individual" href="https://www.genuitec.com/product/myeclipse/download/">Individual Edition</a>.</span>
+							<span class="note2">*The team hub uses minimal CPU and memory while facilitating team development and can be installed onto a desktop or laptop that is used
+								for other activities including regular development.</span>
+					</div>
+					<div class="right">
+						<a href="//www.youtube.com/embed/EJNDSHftLxM?rel=0&autoplay=1&controls=0" class="play_video fancybox fancybox.iframe"><div class="play"></div></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="recommendedDownload">
+
+					<h3>Download your MyEclipse Delivery Hub</h3>
+						
+
+						<script type="text/javascript">
+							var delivery_hub = {"lin":{"version":"2015 SR4b","filename":"secure-delivery-hub-2015-sr4b-installer-linux.run","os":"linux","md5":"45fc61e3cbc509e5f48820251fe29764","size":"948mb","releasedon":"Apr 20, 2016","name":"Secure Delivery Hub","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/hub\/?linux"},"mac":{"version":"2015 SR4b","filename":"secure-delivery-hub-2015-sr4b-installer-macosx.dmg","os":"mac","md5":"8eecde810779f7b15ebf9d8048d4a9c8","size":"830mb","releasedon":"Apr 20, 2016","name":"Secure Delivery Hub","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/hub\/?mac"},"win":{"version":"2015 SR4b","filename":"secure-delivery-hub-2015-sr4b-installer-windows.exe","os":"windows","md5":"4c8c24536465e4ae4298c3f65ffbb00c","size":"966mb","releasedon":"Apr 20, 2016","name":"Secure Delivery Hub","url":"https:\/\/www.genuitec.com\/products\/myeclipse\/download\/hub\/?windows"}};
+						</script>
+
+					<div class="downloadButton">
+
+
+						<a class="download_hub" id="downloadIt" href="#" class="buttonOutline"><span class="dIcon">Delivery Hub for <span class="hub_os"></span> </span></a> 
+						<small>size: <span class="recommended_size"></span> / md5: <span class="recommended_md5"></span></small>
+						<small>Downloads available for <a class="hub_windows" href="#">Windows</a>, <a  class="hub_linux"  href="#" >Linux</a>,
+							or <a  class="hub_mac"  href="#">OS X</a>.</small>
+					</div>
+
+					<div class="description_download">
+
+					<p>
+					<p>Download your MyEclipse Delivery Hub to easily configure your MyEclipse installation with your favorite plugins and settings to then share it with your team.</p>
+<p>Your Delivery Hub can run on any desktop, laptop or data center box, but is recommended to be one that is generally available on your network to allow simple updating to your team.</p>
+				</p>
+
+
+
+
+					</div>
+			</div>
+			<div class="clear"></div>
+			<div class="rollout">
+				<img width="800" height="1199" src="https://resources.cloud.genuitec.com/wp-content/themes/divi-child/images/me/me-rollout.png" alt="MyEclipse Rollout for Teams" />
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		fbq('track', 'ViewContent', {product: 'myeclipse', page: 'predownload'});
+		(function($) {
+
+			$(document).ready(function() {
+
+
+				$('.recommended_version').text(recommended['nice_name']);
+				$('.recommended_os').text(recommended[OSName]['nice_os']);
+				$('.recommended_size').text(recommended[OSName]['size']);
+				$('.recommended_md5').text(recommended[OSName]['md5']);
+				$('.download_recommended').attr('href', recommended[OSName]['url']);
+
+
+				$('.hub_os').text(delivery_hub[OSName]['os']);
+				$('.hub_size').text(delivery_hub[OSName]['size']);
+				$('.hub_md5').text(delivery_hub[OSName]['md5']);
+				$('.download_hub').attr('href', delivery_hub[OSName]['url']);
+				$('.hub_windows').attr('href', delivery_hub['win']['url']);
+				$('.hub_linux').attr('href', delivery_hub['lin']['url']);
+				$('.hub_mac').attr('href', delivery_hub['mac']['url']);
+				
+
+
+
+				var update_download = function(){
+					$install = $('#installs input:checked');
+					var file_id = $install.attr('data-file_id');
+					var os = $install.attr('data-os');
+					var label = $install.attr('data-label');
+					var name = $install.attr('data-name');
+					var md5 = $install.attr('data-md5');
+
+
+					$("#md5").html(md5);
+					$("#tailored_button").attr('href','https://www.genuitec.com/products/myeclipse/download/get/?' + file_id)
+					.html(
+						'Download ' + label
+						+ '<small>'+ os + ' '+ name+ '</small>'
+						)
+						.parent().fadeOut(0).fadeIn(300);
+
+				};
+
+				var __os = {
+					'lin' : 'Linux',
+					'win' : 'Windows',
+					'mac' : 'Mac',
+				}
+				var show_installs = function(){
+					var version = parseInt( $('#versions input:checked').attr('data-id'));
+
+					var os = $('#client_os input:checked').attr('data-val');
+					var html = '';
+					var md5 = '';
+
+					for(i in installs[version][os]){
+						file_id = installs[version][os][i]['file_id'];
+						label = installs[version][os][i]['label'];
+						if (label=='pro Installer') label = 'Std/Pro Installer';
+						console.log(label);
+						size = parseFloat(parseInt(installs[version][os][i]['size'])/1048576).toFixed(2);
+						if(!html) md5 = installs[version][os][i]['md5'];
+						_md5 = installs[version][os][i]['md5'];
+
+						if(size == 0){
+							html += '<li id="i_'+i+'" class="disabled"><input type="radio" name="installs" disabled> <label for="i_'+i+'">' + label + ' (Not Available)</label></li>';
+							continue;
+						}else if(size>1000){
+							size = +parseFloat(size/1024).toFixed(2) + ' gb';
+						}else{
+							 size = parseFloat(size).toFixed() + ' mb';
+						}
+
+						html += '<li><input  id="i_'+file_id+'"  type="radio" name="installs" data-md5="'+_md5+'" data-os="'+ __os[os] +'"  data-name="'+ label +'"   data-label="'+ installs[version]['name'] +'"  data-file_id="'+ file_id +'" ' + ( !html ? 'checked': '') +'> <label for="i_'+file_id+'">' + label + ' <span>('+ size +')</span></label></li>';
+					}
+
+					$("#md5").html(md5);
+
+					$("#installs").html(html).fadeOut(0).fadeIn(300);
+
+					update_download();
+
+				}
+				var show_versions = function() {
+					html = '';
+					default_version = default_id;
+					for(i in installs){
+						html += '<li><input type="radio" id="v_'+i+'" name="version" data-id="'+ i +'" ' + ( i==default_version ? 'checked': '') +'> <label for="v_'+i+'">MyEclipse ' + installs[i]['name'] + '</label></li>';
+					}
+					$("#versions").html(html);
+
+					show_installs();
+				}
+
+				$('#i_'+OSName).trigger('click');
+
+				show_versions();
+
+
+
+				$('#versions').on('click','input',show_installs);
+				$('#client_os').on('click','input',show_installs);
+
+				$('#installs').on('click','input', update_download);
+				// $('.tailorDownload').on('click','li', function(ev){
+				// if(!$(ev.target).is('input'))
+				// $(this).find('input').trigger('click');
+				// });
+//
+
+				$('.select_flavor label').on('click', function() {
+					$(this).toggleClass('checked');
+					$('.download_it').toggleClass('inactive')
+					return false;
+				});
+
+				$('#download-teams label').on('click', function() {
+					$(this).toggleClass('checked');
+					$('.os div').toggleClass('inactive');
+					return false;
+				});
+
+				$('#choose_what .team').on('click', function() {
+					$(this).addClass('selected');
+					$('#choose_what .individual').addClass('inactive').removeClass('selected');
+					$(this).removeClass('inactive');
+					$("#download-teams").show();
+					$(".select_flavor,#myeclipse-download").hide();
+					return false;
+				});
+
+				$('#choose_what .individual').on('click', function() {
+					$(this).addClass('selected');
+					$('#choose_what .team').addClass('inactive').removeClass('selected');
+					$(this).removeClass('inactive');
+					$("#download-teams").hide();
+					$(".select_flavor,#myeclipse-download").show();
+					return false;
+				});
+
+				$('#select_individual').click(function(){
+					$('#choose_what .individual').trigger('click');
+					return false;
+				});
+
+				$(".fancybox").fancybox({width: 800, height: 450,aspectRatio : true});
+
+			if(window.location.hash == "#team") {
+					$('#choose_what .team').trigger('click');
+			}
+			})
+		})(jQuery);
+
+	</script>
+
+	<footer id="footer-products" class="">
+	<div class="content">
+		<ul class="footerNav">
+			<!-- <li class="requestDemo"><a href="#">Request Demo</a></li> -->
+			<li class="phoneNumber">1 888 914 6620</li>
+			<li><a href="https://www.genuitec.com/company/contact/">Contact</a></li>
+			<li><a href="https://www.genuitec.com/products/">Products</a></li>
+			<li><a href="https://www.genuitec.com/company/">Company</a></li>
+			<li><a href="https://www.genuitec.com/support/">Support</a></li>
+		</ul>
+
+		<div class="footerLeft">
+			<div id="latest_tweet" class="footerTwitter">
+
+					<p>
+		RT <a href="http://twitter.com/Genuitec_SDC" target="_blank">@Genuitec_SDC</a>: SDC 2017 Is here and with it, new looks, security &amp; Neon! Learn more: <a href="https://t.co/30iH0drSj5" target="_blank">https://t.co/30iH0drSj5</a> <a href="https://t.co/gF8BajedjN" target="_blank">https://t.co/gF8BajedjN</a>	</p>
+   <p class="time"><a href="http://twitter.com/Genuitec">about 15 hours ago</a></p><p></p>
+
+
+
+			</div>
+
+			<div class="followUsF">
+				<div class="socialLinks">
+					<a class="twitter" href="https://twitter.com/Genuitec">Twitter</a>
+					<a class="facebook" href="https://www.facebook.com/Genuitec?ref=br_rs">Facebook</a>
+					<a class="gplus" href="https://plus.google.com/+GenuitecHome/">Google Plus</a>
+				</div>
+				Follow us on social media
+			</div>
+		</div>
+
+		<div class="footerRight">
+			<div class="blogFooter">
+
+
+
+
+														<div class="blogMeta">
+					<div class="dayF">03</div>
+					<div class="monthF">Jan</div>
+				</div>
+
+					<div class="blogFcontent">
+						<h4><a href="https://www.genuitec.com/sdc-2017-looks-security-neon/" title="SDC 2017 &#8211; Looks, Security &amp; Neon.">SDC 2017 &#8211; Looks, Security &amp; Neon.</a></h4>
+
+
+												<p>Get your installers ready (Java 1.8), because Neon is here! Our first release of the year is based on Eclipse Neon and with it, many other exciting updates.Totally new portal, we are updating the look and feel of the SDC portal, giving extra functi...</p>
+											</div>
+
+
+					<div class="readmoreF">
+							<a href="https://www.genuitec.com/sdc-2017-looks-security-neon/" class="buttonOutline blogReadmoreF">Read more</a>
+						</div>
+			
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div id="copyright">
+		<p>© 2001- 2017 Genuitec, LLC. All rights reserved.</p>
+        <p class="smallerText">2221 Justin Road #119-340 Flower Mound, TX 75028</p>
+	</div>
+</footer>
+
+
+
+
+
+
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+try {
+_uacct = "UA-380535-6";
+urchinTracker();
+} catch(err) {}
+</script>
+
+<style>#wpadminbar{ opacity: 	1; }</style><script type="text/javascript">
+ (function() {
+   window._pa = window._pa || {};
+   // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+   // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+   // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+   var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+   pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/56e825715217a8e54d0000e3.js";
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+ })();
+</script><link rel='stylesheet' id='woocommercebulkdiscount-style-css'  href='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce-bulk-discount/css/style.css?ver=4.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/divi-child/js/jquery.cookie.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/frontend-builder-global-functions.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.10-6063'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=1509'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/products\/myeclipse\/download\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View Cart","cart_url":"https:\/\/www.genuitec.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.6.4'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/products\/myeclipse\/download\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=2.6.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/products\/myeclipse\/download\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=2.6.4'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/jquery.mobile.custom.min.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/js/custom.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/jquery.fitvids.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/waypoints.min.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/jquery.magnific-popup.js?ver=2.7.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_pb_custom = {"ajaxurl":"https:\/\/www.genuitec.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/www.genuitec.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/www.genuitec.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"fff2c4ce38","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"ef0d382cee","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","is_builder_plugin_used":"","is_divi_theme_used":"1","widget_search_selector":".widget_search","is_ab_testing_active":"","page_id":"11636","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-content/themes/Divi/includes/builder/scripts/frontend-builder-scripts.js?ver=2.7.3'></script>
+<script type='text/javascript' src='https://resources.cloud.genuitec.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+</body>
+</html>
+</div>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 12620/12782 objects using disk
+Page Caching using disk: enhanced (Requested URI is rejected)
+Content Delivery Network via resources.cloud.genuitec.com
+Database Caching 58/64 queries in 0.073 seconds using disk
+
+ Served from: www.genuitec.com @ 2017-01-04 00:33:03 by W3 Total Cache -->

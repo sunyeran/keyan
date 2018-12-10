@@ -1,0 +1,109 @@
+Ext.define('zs.view.login.Kdcx', {
+    extend: 'Ext.window.Window',
+
+    xtype: 'kdcx',
+    requires:[
+              'zs.view.login.LoginController',
+              'Ext.form.Panel'
+              ],
+    controller:'login',
+
+    autoShow: true,
+  
+    height:580,
+    width: 420,
+    layout: {
+        type: 'fit'
+    },
+    iconCls: 'key',
+    title: "考生通知书邮件查询",
+    closeAction: 'hide',
+  //  closable: false,
+    draggable: false,
+    resizable: false,
+
+    items: [
+        {
+            xtype: 'form',
+            itemId: 'kdcxform',
+          
+            frame:false,
+            bodyPadding: 15,
+            defaults: {
+                xtype: 'textfield',
+                anchor: '90%',
+                labelWidth: 70
+           
+            },
+            items: [
+				{
+				    margin: '0 0 20 0',
+				    xtype: 'component',
+				    html: [
+				        '考生你好,感谢你考入天津滨海职业学院，你的录取通知书已经通过邮局发送给你，请你记下邮件号，核对接受人与地址，注意查收。'
+				    ]
+				},
+				
+                { 
+                    name: 'ksh',
+                    fieldLabel: "考生号"
+                 //   iconCls: 'x-fa fa-key',
+                   
+                },
+               
+                {   
+                 
+                    name: 'xm',
+                    id:'xm',
+                    fieldLabel: "姓名",
+             
+                    readOnly:true
+               
+                },
+                {
+                    
+                    fieldLabel:'收件人',
+                    name:'sjr',
+                    readOnly:true
+                    
+                 },
+                 {
+                     
+                     fieldLabel:'收件人地址',
+                     name:'jtdz',
+                     readOnly:true
+                     
+                  },
+                  {
+                      
+                      fieldLabel:'邮政编码',
+                      name:'yzbm',
+                      readOnly:true
+                      
+                   },
+                   {
+                       
+                       fieldLabel:'联系电话',
+                       name:'lxdh',
+                       readOnly:true
+                       
+                    },
+                   {
+                       
+                       fieldLabel:'邮件号',
+                       name:'yjh',
+                       readOnly:true
+                       
+                    },
+                     {
+                         
+                        xtype:'displayfield',
+                         name:'tishi'
+                        
+                         
+                     }
+            ]
+           
+         }
+      ]
+  });

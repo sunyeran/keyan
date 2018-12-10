@@ -1,0 +1,36 @@
+Ext.define('zs.view.manage.Manage', {
+    extend: 'Ext.window.Window',
+    xtype: 'manage',
+   
+    requires: [
+        'Ext.layout.container.Table',
+    
+              'zs.view.login.LoginController',
+              'Ext.form.Panel'
+              ],
+    controller:'login',
+    title: '导入考生信息',
+    autoShow: true,
+    width: 660,
+    width: 500,
+    height: 300,
+    title: "HBoxLayout Panel",
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+    renderTo: document.body,
+    items: [{
+        xtype: 'panel',
+        title: 'Inner Panel One',
+        flex: 2
+    },{
+        xtype: 'panel',
+        title: 'Inner Panel Two',
+        flex: 1
+    },{
+        xtype: 'panel',
+        title: 'Inner Panel Three',
+        flex: 1
+    }]
+});

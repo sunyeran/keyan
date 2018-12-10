@@ -1,0 +1,115 @@
+Ext.define('zs.view.manage.Manage', {
+    extend: 'Ext.window.Window',
+    xtype: 'manage',
+   
+    requires: [
+        'Ext.layout.container.Table',
+    
+              'zs.view.login.LoginController',
+              'Ext.form.Panel'
+              ],
+    controller:'login',
+   
+    autoShow: true,
+    width: 660,
+    width: 500,
+    height: 300,
+    title: "管理员后台管理",
+    layout: {
+        type: 'vbox',
+        
+        align: 'stretch'
+    },
+   
+    items: [{
+        xtype: 'panel',
+        collapsible: true,
+        title: '导入考生信息',
+           
+        items: [{  
+            xtype: 'textfield',   
+            title: '导入考生信息',
+            fieldLabel: '文 件',   
+        
+            name: 'upload',   
+        
+            inputType: 'file',   
+        
+            allowBlank: false,   
+        
+            blankText: '请上传文件',   
+        
+            anchor: '90%',  // anchor width by percentage   
+        
+        }],
+        buttons: [{   
+        	  
+            text: '上 传',   
+        
+            handler: function() {   
+        
+              if(formUpload.form.isValid()){   
+        
+                Ext.MessageBox.show({   
+        
+                     title: 'Please wait',   
+        
+                     msg: 'Uploading...',   
+        
+                     progressText: '',   
+        
+                     width:300,   
+        
+                     progress:true,   
+        
+                     closable:false,   
+        
+                     animEl: 'loding'  
+        
+                   });   
+        
+                formUpload.getForm().submit({       
+        
+                  url:'uploadAction.action?types='+types,   
+        
+                  success: function(form, action){   
+        
+                     var objxzdz = Ext.get(uploadid).dom;   
+        
+                     var value = action.result.msg;   
+        
+                     objxzdz.value = value;   
+        
+                     Ext.Msg.alert('成功','上传成功.');   
+        
+                     winUpload.hide();     
+        
+                  },       
+        
+                   failure: function(form, action){       
+        
+                    //... action生成的json{msg:上传失败},页面就可以用action.result.msg得到非常之灵活   
+        
+                    Ext.Msg.alert('Error', action.result.msg);       
+        
+                   }   
+        
+                })              
+        
+                 
+        
+              }   
+        
+          }}],
+        flex: 2
+    },{
+        xtype: 'panel',
+        collapsible: true,
+        title: '导入快递信息',
+        flex: 1
+    },{
+        xtype: 'panel',
+        title: '修改提示信息',
+        flex: 1
+    }]
+});

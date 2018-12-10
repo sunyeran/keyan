@@ -1,0 +1,76 @@
+Ext.define('zs.view.manage.Manage', {
+    extend: 'Ext.window.Window',
+    xtype: 'manage',
+   
+    requires: [
+        'Ext.layout.container.Table',
+    
+              'zs.view.login.LoginController',
+              'Ext.form.Panel'
+              ],
+    controller:'login',
+    title: '导入考生信息',
+    autoShow: true,
+    width: 660,
+    layout: {
+        type: 'vbox',
+        align : 'stretch'
+   //     pack  : 'start'
+    },
+  
+    defaults: {
+        xtype: 'panel',
+        width: 200,
+        height: 280,
+        bodyPadding: 10
+    },
+
+    items: [{
+        title: '导入考生信息',
+        html: 'KitchenSink.DummyText.mediumText'
+    }, {
+        title: '导入快递信息',
+        collapsible: true,
+        html: 'KitchenSink.DummyText.mediumText'
+    }, {
+        title: 'Built in Tools',
+        collapsed: true,
+        collapsible: false,
+        width: 640,
+        html: 'KitchenSink.DummyText.mediumText',
+        tools: [
+            { type: 'pin' },
+            { type: 'refresh' },
+            { type: 'search' },
+            { type: 'save' }
+        ],
+        colspan: 3
+    }, {
+        title: 'Custom Tools using iconCls',
+        collapsed: true,
+        collapsible: false,
+        width: 640,
+        html: 'KitchenSink.DummyText.mediumText',
+        tools: [
+            { iconCls: 'x-fa fa-wrench' },
+            { iconCls: 'x-fa fa-reply' },
+            { iconCls: 'x-fa fa-reply-all' },
+            { iconCls: 'x-fa fa-rocket' }
+        ],
+        colspan: 3
+    },
+    {
+        title: 'Custom Tools using glyph configuration',
+        collapsed: true,
+        collapsible: false,
+        width: 640,
+        html: 'KitchenSink.DummyText.mediumText',
+        tools: [
+            { glyph: 'xf0ad@FontAwesome' },
+            { glyph: 'xf112@FontAwesome' },
+            { glyph: 'xf122@FontAwesome' },
+            { glyph: 'xf135@FontAwesome' }
+        ],
+        colspan: 3
+    }]
+});

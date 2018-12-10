@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.genuitec.eclipse.ast.deploy.core.runonserver">
+<booleanAttribute key="runonserver.exploded" value="true"/>
+<stringAttribute key="runonserver.project" value="zs"/>
+<stringAttribute key="runonserver.server" value="tomcat6Server"/>
+<booleanAttribute key="runoserver.restart" value="true"/>
+</launchConfiguration>

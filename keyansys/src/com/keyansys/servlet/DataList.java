@@ -1,0 +1,355 @@
+package com.keyansys.servlet;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+//import net.sf.json.JsonConfig;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.keyansys.hibernate.beans.Paper;
+import com.keyansys.hibernate.beans.PaperDAO;
+import com.keyansys.hibernate.beans.Patent;
+import com.keyansys.hibernate.beans.PatentDAO;
+import com.keyansys.hibernate.beans.Subject;
+import com.keyansys.hibernate.beans.SubjectDAO;
+import com.keyansys.hibernate.beans.Teaching;
+import com.keyansys.hibernate.beans.TeachingDAO;
+import com.keyansys.hibernate.util.Constants;
+import com.keyansys.hibernate.util.JsonDateValueProcessor;
+
+
+public class DataList extends HttpServlet {
+
+	/**
+	 * Constructor of the object.
+	 */
+
+	 public PaperDAO paperDAO;
+	
+	 public void setPaperDAO(PaperDAO paperDAO){
+		 this.paperDAO=paperDAO;
+	 }
+	 public PatentDAO patentDAO;
+	 
+	 public void setPatentDAO(PatentDAO patentDAO){
+		 this.patentDAO=patentDAO;
+	 }
+     public SubjectDAO subjectDAO;
+	 
+	 public void setSubjectDAO(SubjectDAO subjectDAO){
+		 this.subjectDAO=subjectDAO;
+	 }
+     public TeachingDAO teachingDAO;
+	 
+	 public void setTeachingDAO(TeachingDAO teachingDAO){
+		 this.teachingDAO=teachingDAO;
+	 }
+	public DataList() {
+		super();
+	}
+	 @Transactional(readOnly = true, rollbackFor = Throwable.class)
+	public void service(HttpServletRequest request ,
+			HttpServletResponse response)
+			throws IOException , ServletException
+		{    Long totalCount = null;
+	    	 int start=Integer.parseInt(request.getParameter("start"));
+	        int limit=Integer.parseInt(request.getParameter("limit"));
+	        String user=(String)request.getSession().getAttribute(Constants.USERNAME_KEY);
+		     String dept=(String)request.getSession().getAttribute(Constants.DEPARTMENT_KEY);
+		     String groupid=(String)request.getSession().getAttribute(Constants.GROUPID_KEY);
+		     System.out.println(user);
+		     System.out.println(dept);
+		     System.out.println(groupid);
+		    Map<String , Object> map = new HashMap();
+		    List list=new ArrayList();
+		    ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+			paperDAO =PaperDAO.getFromApplicationContext(ctx);
+		    String entity=request.getParameter("entity");
+		    String hql="from "+entity;
+		    String hql1="";
+		    if(groupid.equals("2")){
+		    	hql1=" where department="+"'"+dept+"'";	
+		    	hql=hql+hql1;}
+		    else if(groupid.equals("3")){
+		    	hql1=" where userName="+"'"+user+"'";		   
+		    	hql=hql+hql1; }
+		    else{
+		    	hql1=" where";
+		    	hql="from "+entity;
+		    }
+		        
+		   // System.out.println(entity);
+		    if("Paper".equals(entity)){
+		        hql="from "+entity;
+		        if(groupid.equals("3"))
+		        	hql1=" where approval='未审核' and userName="+"'"+user+"'";
+		        else
+		        hql1=" where userName="+"'"+user+"'";		   
+			   	hql=hql+hql1; 
+			   /*	paperDAO = new PaperDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				paperDAO = (PaperDAO) ctx.getBean("paperDAO");*/
+			   
+				String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=paperDAO.findAllForPage(hql, limit, start);  //分页显示“我的科研成果”
+				totalCount=paperDAO.findCount(hql_count);
+				ctx=null;
+				
+		    }
+		    else if("PaperCheck".equals(entity)){
+		    /*	paperDAO = new PaperDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				paperDAO = (PaperDAO) ctx.getBean("paperDAO");*/
+		    	if(groupid.equals("1"))
+		    	{ hql="from Paper "+hql1+" approval='未审核'";
+		    	  list=paperDAO.findAll(hql);}   //显示管理员界面下的学院科研成果
+		    	else
+		    	{hql="from Paper "+hql1+"and approval='未审核'";
+				
+				String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=paperDAO.findAllForPage(hql, limit, start);   //显示部门负责人界面下的部门教师科研成果
+				totalCount=paperDAO.findCount(hql_count);
+		    	}
+		    	ctx=null;				
+		    }
+		    else if("PaperUncheck".equals(entity)){
+		    /*	paperDAO = new PaperDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				paperDAO = (PaperDAO) ctx.getBean("paperDAO");*/
+		    	if(groupid.equals("1"))
+		    		{hql="from Paper "+hql1+" approval='已审核'";
+		    		list=paperDAO.findAll(hql);}
+		    	else
+		    	{hql="from Paper "+hql1+"and approval='已审核'";
+				String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=paperDAO.findAllForPage(hql, limit, start);
+				totalCount=paperDAO.findCount(hql_count);
+		    	}
+		    	ctx=null;
+		    }
+		    else if("PaperList".equals(entity)){
+		    	
+		    	hql="from Paper p where p.approval='已审核' and p.department='"+dept+"'";
+			/*	paperDAO = new PaperDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				paperDAO = (PaperDAO) ctx.getBean("paperDAO");*/
+				//String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=paperDAO.findAll(hql);
+				//totalCount=paperDAO.findCount(hql_count);
+				ctx=null;
+				
+		    }
+		    else if("Patent".equals(entity)){
+		    	hql="from "+entity;
+		        if(groupid.equals("3"))
+			    	hql1=" where approval='未审核' and username="+"'"+user+"'";
+		        else
+		        	hql1=" where username="+"'"+user+"'";		   
+			   	hql=hql+hql1; 
+		    /*	patentDAO = new PatentDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				patentDAO = (PatentDAO) ctx.getBean("patentDAO");*/
+			  //  List<Patent> list=new ArrayList<Patent>();
+			   	patentDAO =PatentDAO.getFromApplicationContext(ctx);
+				list=patentDAO.findAllForPage(hql, limit, start);
+				ctx=null;
+		    }
+		    else if("PatentCheck".equals(entity)){
+		    /*	patentDAO = new PatentDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				patentDAO = (PatentDAO) ctx.getBean("patentDAO");*/
+		    	patentDAO =PatentDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1"))
+		    		{hql="from Patent "+hql1+" approval='未审核'";
+		        	list=patentDAO.findAll(hql);}
+		    	else
+		    	{hql="from Patent "+hql1+"and approval='未审核'";
+		    	
+				String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=patentDAO.findAllForPage(hql, limit, start);
+				totalCount=patentDAO.findCount(hql_count);
+		    	}
+		    	ctx=null;
+		    }
+		    else if("PatentUncheck".equals(entity)){
+		    /*	patentDAO = new PatentDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				patentDAO = (PatentDAO) ctx.getBean("patentDAO");*/
+		    	patentDAO =PatentDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1")){
+		    	  hql="from Patent "+hql1+" approval='已审核'";
+		    	  list=patentDAO.findAll(hql);}
+		    	else
+		    	 {hql="from Patent "+hql1+"and approval='已审核'";
+				
+				  String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				  list=patentDAO.findAllForPage(hql, limit, start);
+				  totalCount=patentDAO.findCount(hql_count);
+		    	 }
+		    	ctx=null;
+		    }
+           else if("PatentList".equals(entity)){
+		    	
+		    	hql="from Patent p where p.approval='已审核' and p.department='"+dept+"'";
+			/*	patentDAO = new PatentDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				patentDAO = (PatentDAO) ctx.getBean("patentDAO");*/
+		    	patentDAO =PatentDAO.getFromApplicationContext(ctx);
+				//String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=patentDAO.findAll(hql);
+				//totalCount=patentDAO.findCount(hql_count);
+				ctx=null;
+		    }
+		    else if("Subject".equals(entity)){
+		    	hql="from "+entity;
+		    	 if(groupid.equals("3"))
+			       	hql1=" where approval='未审核' and username="+"'"+user+"'";
+		    	 else
+		        	hql1=" where username="+"'"+user+"'";		   
+			   	hql=hql+hql1; 
+		    /*	subjectDAO = new SubjectDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				subjectDAO = (SubjectDAO) ctx.getBean("subjectDAO");*/
+			   	subjectDAO =SubjectDAO.getFromApplicationContext(ctx);
+			
+				list=subjectDAO.findAllForPage(hql, limit, start);
+				ctx=null;	
+			}
+		    else if("SubjectCheck".equals(entity)){
+		    	/*subjectDAO = new SubjectDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				subjectDAO = (SubjectDAO) ctx.getBean("subjectDAO");*/
+		       	subjectDAO =SubjectDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1")){
+		    		hql="from Subject "+hql1+" approval='未审核'";
+		    	   list=subjectDAO.findAll(hql);}
+		    	else
+		    	  {hql="from Subject "+hql1+"and approval='未审核'";
+		    	
+			    	String hql_count="select count(*) as num "+hql+" order by last_update desc";
+			    	list=subjectDAO.findAllForPage(hql, limit, start);
+			    	totalCount=subjectDAO.findCount(hql_count);
+		    	  }
+		    	ctx=null;
+			    }
+		    else if("SubjectUncheck".equals(entity)){
+		    /*	subjectDAO = new SubjectDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				subjectDAO = (SubjectDAO) ctx.getBean("subjectDAO");*/
+		       	subjectDAO =SubjectDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1")){
+		    		hql="from Subject "+hql1+" approval='已审核'";
+		    	   list=subjectDAO.findAll(hql);}
+		    	else
+		    	  {hql="from Subject "+hql1+"and approval='已审核'";
+		    
+			    	String hql_count="select count(*) as num "+hql+" order by last_update desc";
+			    	list=subjectDAO.findAllForPage(hql, limit, start);
+			    	totalCount=subjectDAO.findCount(hql_count);
+		    	  }
+		    	ctx=null;
+			    }
+            else if("SubjectList".equals(entity)){
+            	hql="from Subject p where p.approval='已审核' and p.department='"+dept+"'";
+            /*	subjectDAO = new SubjectDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				subjectDAO = (SubjectDAO) ctx.getBean("subjectDAO");*/
+               	subjectDAO =SubjectDAO.getFromApplicationContext(ctx);
+				//String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=subjectDAO.findAll(hql);
+				//totalCount=subjectDAO.findCount(hql_count);
+				ctx=null;
+            }
+		    	
+		    	
+		    else if("Teaching".equals(entity)){
+		    	hql="from "+entity;
+		    	 if(groupid.equals("3"))
+				   	hql1=" where approval='未审核' and username="+"'"+user+"'";
+		    	 else
+		    	    hql1=" where username="+"'"+user+"'";		   
+			   	hql=hql+hql1; 
+		/*    	teachingDAO = new TeachingDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				teachingDAO = (TeachingDAO) ctx.getBean("teachingDAO");*/
+			   	teachingDAO = TeachingDAO.getFromApplicationContext(ctx);
+			  //  List<Teaching> list=new ArrayList<Teaching>();
+				list=teachingDAO.findAllForPage(hql, limit, start);
+				ctx=null;
+			    }	 
+		    else if("TeachingCheck".equals(entity)){
+		    	/*teachingDAO = new TeachingDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				teachingDAO = (TeachingDAO) ctx.getBean("teachingDAO");*/
+		     	teachingDAO = TeachingDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1")){
+		    		hql="from Teaching "+hql1+" approval='未审核'";
+		    	    list=teachingDAO.findAll(hql);}
+		    	else
+		    	  {hql="from Teaching "+hql1+"and approval='未审核'";
+		    	
+					String hql_count="select count(*) as num "+hql+" order by last_update desc";
+					list=teachingDAO.findAllForPage(hql, limit, start);
+					totalCount=teachingDAO.findCount(hql_count);
+			   	  }
+		    	ctx=null;
+			    }	 
+		    else if("TeachingUncheck".equals(entity)){
+		    /*	teachingDAO = new TeachingDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				teachingDAO = (TeachingDAO) ctx.getBean("teachingDAO");*/
+		     	teachingDAO = TeachingDAO.getFromApplicationContext(ctx);
+		    	if(groupid.equals("1")){
+		    		hql="from Teaching "+hql1+" approval='已审核'";
+		            list=teachingDAO.findAll(hql);}
+		    	else
+		    	  {hql="from Teaching "+hql1+"and approval='已审核'";
+		    	
+					String hql_count="select count(*) as num "+hql+" order by last_update desc";
+					list=teachingDAO.findAllForPage(hql, limit, start);
+					totalCount=teachingDAO.findCount(hql_count);
+				//list=teachingDAO.findAll(hql); 未分页使用的查询
+		    	  }
+		    	ctx=null;
+			    }	
+		    else if("TeachingList".equals(entity)){
+            	hql="from Teaching p where p.approval='已审核' and p.department='"+dept+"'";
+            	/*teachingDAO = new TeachingDAO();
+				ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+				teachingDAO = (TeachingDAO) ctx.getBean("teachingDAO");*/
+             	teachingDAO = TeachingDAO.getFromApplicationContext(ctx);
+				//String hql_count="select count(*) as num "+hql+" order by last_update desc";
+				list=teachingDAO.findAll(hql);
+				//totalCount=teachingDAO.findCount(hql_count);
+				ctx=null;
+		    }
+		    map.put("success",true);
+			map.put("data",list);  	
+			map.put("total", totalCount);
+			// JSONArray ja = new JSONArray();  
+		     JsonConfig jf = new JsonConfig();  
+		        //jf.registerJsonValueProcessor(java.sql.Timestamp.class, new DateJsonValueProcessor("yyyy-MM-dd HH:mm:ss"));  
+		     jf.registerJsonValueProcessor(java.sql.Timestamp.class, new JsonDateValueProcessor());  
+		     jf.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor());
+			response.setContentType("application/json;charset=UTF-8"); 
+			PrintWriter out = response.getWriter();
+			JSONObject result = JSONObject.fromObject(map,jf);
+			out.print(result.toString());
+			//JSONObject result = JSONObject.fromObject(json);	
+			//out.print(result.toString());
+		}
+}

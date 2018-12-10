@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/keyansys?useUnicode=true&amp;characterEncoding=utf-8"/>
+		<property name="username" value="root"/>
+		<property name="password" value="tjbpiMYSQLdb"/>
+      
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/keyansys/hibernate/beans/User.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Groups.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Notice.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Paper.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Patent.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Subject.hbm.xml</value>
+				<value>com/keyansys/hibernate/beans/Teaching.hbm.xml</value>
+			</list>
+		</property></bean>
+		<!-- 配置事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+		
+	</bean>
+	<bean id="userDAO" class="com.keyansys.hibernate.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="groupsDAO" class="com.keyansys.hibernate.beans.GroupsDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="noticeDAO" class="com.keyansys.hibernate.beans.NoticeDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+ 	<bean id="paperDAO" class="com.keyansys.hibernate.beans.PaperDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="patentDAO" class="com.keyansys.hibernate.beans.PatentDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="subjectDAO" class="com.keyansys.hibernate.beans.SubjectDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="teachingDAO" class="com.keyansys.hibernate.beans.TeachingDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!--
+		
+	<bean id="photoDAO" class="com.keyansys.hibernate.beans.PhotoDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>-->
+	<bean id="loginServlet"	class="com.keyansys.servlet.LoginServlet">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean> 
+	<bean id="userlist"	class="com.keyansys.servlet.UserList">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="grouplist"	class="com.keyansys.servlet.GroupList">
+		<property name="groupsDAO">
+			<ref local="groupsDAO" />
+		</property>
+	</bean>
+	<bean id="noticelist"	class="com.keyansys.servlet.NoticeList">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<!-- <bean id="adduser"	class="com.keyansys.servlet.AddUser">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="edituser"	class="com.keyansys.servlet.EditUser">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="deleteuser"	class="com.keyansys.servlet.DeleteUser">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="passwordmodify"	class="com.keyansys.servlet.PasswordModify">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="getdepphoto"	class="com.keyansys.servlet.GetDepPhoto">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="resetpassword"	class="com.keyansys.servlet.ResetPassword">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	
+	<bean id="patentcheck"	class="com.keyansys.servlet.PatentCheck">
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+	</bean>
+	<bean id="workload"	class="com.keyansys.servlet.Workload">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+		<property name="subjectDAO">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean>
+	<bean id="datalist"	class="com.keyansys.servlet.DataList">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+		<property name="subjectDAO">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean> -->
+	<!-- 	p:userDAO-ref="userDAO"/> -->
+	
+	<!-- <bean id="noticeDAO" class="com.keyansys.hibernate.dao.NoticeDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="paperDAO" class="com.keyansys.hibernate.dao.PaperDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="teachingDAO" class="com.keyansys.hibernate.dao.TeachingDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean> -->
+	<!-- 定义DAO代理 -->
+	<bean id="userDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="userDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="groupsDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="groupsDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="noticeDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="noticeDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	 <bean id="paperDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="paperDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="patentDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="patentDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="subjectDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="teachingDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="teachingDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--
+	<bean id="photoDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="photoDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="staticistAllWorkloadProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="staticistAllWorkloadTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="update*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop> 
+	    		<prop key="find*">PROPAGATION_REQUIRED</prop>
+	    		<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean> -->
+	</beans>

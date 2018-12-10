@@ -1,0 +1,40 @@
+Ext.define('keyansys.view.menu.Accordion', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.mainmenu',
+ //   bodyStyle: 'background:#fff; padding:10px;',
+  //  width: 185,
+   layout: {
+        type: 'accordion',
+        pack: 'start'
+    },
+    /* ui: 'navigation',
+   tabPosition: 'left',
+    tabRotation: 0,
+    tabBar: {
+        // turn off borders for classic theme.  neptune and crisp don't need this
+        // because they are borderless by default
+        border: false
+    },
+
+    defaults: {
+        textAlign: 'left',
+        bodyPadding: 15
+    },*/
+    defaults: {
+        // applied to each contained panel
+    	textAlign: 'left',
+        bodyStyle: 'padding:10px'
+    },
+   
+    animate: true,
+    tools: [{type: 'pin'}],
+  //  multi: true,
+     collapsible: true,  
+     floatable: false ,
+    // autoScroll:false,
+    split:true,
+  //  hideCollapseTool: false,
+   // iconCls: 'fa fa-sitemap fa-lg',
+   iconCls: 'sitemap',
+    title: '导航'
+});

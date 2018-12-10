@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;VTypes.js&apos; to &apos;field&apos;&#x0D;&#x0A;- Original project: &apos;keyansys&apos;&#x0D;&#x0A;- Destination element: &apos;field&apos;&#x0D;&#x0A;- Original element: &apos;VTypes.js&apos;" description="Copy file" element1="WebRoot/ext/classic/classic/src/form/field/VTypes.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1498466636105" target="/zs/WebRoot/ext/classic/classic/src/form/field" units="0" version="1.0"/>
+</session>

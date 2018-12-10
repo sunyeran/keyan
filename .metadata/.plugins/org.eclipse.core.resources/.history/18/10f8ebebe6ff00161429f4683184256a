@@ -1,0 +1,153 @@
+
+Ext.define('keyansys.view.login.LoginController', {
+    extend: 'Ext.app.ViewController',
+    alias:'controller.login',
+    
+   /* onLoginClick:function(){
+    	
+    	localStorage.setItem("KeyanLoggedIn",true);
+    	this.getView().destroy();
+    	Ext.create({
+    		
+    		xtype:'app-main'
+    	});
+    }*/
+  /*  requires:[
+      'keyansys.util.MD5'
+    ],*/
+ requires: [
+        'keyansys.util.Util',
+        'keyansys.util.Config',
+        'keyansys.view.login.CapsLockTooltip'
+              
+    ],/*
+    views: [
+        'Login',
+    //    'Header',
+        'CapsLockTooltip'
+       
+    ],*/
+
+   
+ /* refs: [
+        {
+            ref: 'capslockTooltip',
+            selector: 'capslocktooltip'
+        }
+    ],*/
+   
+    init: function(application) {
+    
+        this.control({
+         
+            "login form textfield": {
+                specialkey: this.onTextfielSpecialKey
+            },
+            "login form textfield[name=password]": {
+                keypress: this.onTextfielKeyPress
+            },
+           
+            "appheader button#logout": {
+                click: this.onButtonClickLogout
+            },
+             "appheader button#modifypassword": {
+                click: this.onButtonClickModifyPassword
+            }
+        });
+
+ 
+    },
+onButtonClickSubmit: function(button,e,options){
+	var formPanel = button.up('form'),
+            login = button.up('login'),
+            user = formPanel.down('textfield[name=user]').getValue(),
+            pass = formPanel.down('textfield[name=password]').getValue();   
+            
+        if (formPanel.getForm().isValid()) {
+
+         //   pass = keyansys.util.MD5.encode(pass); 
+            
+            Ext.get(login.getEl()).mask("正在验证...", '请稍后');
+
+            Ext.Ajax.request({
+                url: 'servlet/LoginServlet',
+                cache: false,
+                async: false,
+
+                params: {
+                    user: user,
+                    password: pass
+                },
+                success: function( response, action,options) {
+                    
+                    Ext.get(login.getEl()).unmask();
+                   
+                     var result=response.responseText;
+                    result=Ext.JSON.decode(result);
+                   
+                    if (result.success) {
+                   
+                        login.close();
+                       // cookieValue=getCookie("name");
+                       Ext.apply(keyansys.util.Config,result);
+                  
+                        Ext.create('keyansys.view.main.Main');
+                      //  keyansys.util.SessionMonitor.start();
+                      
+                    } else {
+                     
+                    	Ext.Msg.alert("提示",result.msg);
+                    }
+                  Ext.ComponentQuery.query('appheader button')[0].setText(keyansys.util.Config.name+"老师，欢迎您使用科研管理系统 v2.0");  
+                },
+               
+                failure: function(conn, response, options, eOpts) {
+
+                    Ext.get(login.getEl()).unmask();
+                
+                    Ext.MessageBox.alert("提示",action.result.msg);
+                },
+                scope:this
+            });
+       }   
+    
+     // return cookieValue;
+    },  
+    
+    onTextfielSpecialKey: function(field, e, options) {
+        if (e.getKey() == e.ENTER){
+            var submitBtn = field.up('form').down('button#submit');
+            submitBtn.fireEvent('click', submitBtn, e, options);
+        }
+    },
+
+    onTextfielKeyPress: function(field, e, options) {
+      var charCode = e.getCharCode(),
+            me = this;
+
+        if((e.shiftKey && charCode >= 97 && charCode <= 122) ||
+            (!e.shiftKey && charCode >= 65 && charCode <= 90)){
+
+            if(me.capslockTooltip === undefined){
+                me.capslockTooltip = Ext.widget('capslocktooltip');
+            }
+
+            me.capslockTooltip.show();
+
+        } else {
+
+            if(me.capslockTooltip !== undefined){
+                me.capslockTooltip.hide();
+            }
+        }
+    },
+
+  
+
+onButtonClickCancel:function(button,e,options){
+	this.lookupReference('form').reset();
+	
+}
+
+});
+  

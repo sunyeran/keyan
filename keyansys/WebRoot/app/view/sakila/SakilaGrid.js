@@ -1,0 +1,53 @@
+Ext.define('keyansys.view.sakila.SakilaGrid', {
+    extend: 'Ext.grid.Panel',
+    alias: 'widget.sakilagrid',
+    reference: 'sakilagrid',
+    requires: [
+        'keyansys.view.toolbar.AddEditDelete'
+    ],
+
+    columnLines: true,
+    viewConfig: {
+        stripeRows: true
+    },
+     columns: [
+        {
+           xtype:'rownumberer',
+           text: '序号', 
+           autoWidth: true
+        },
+        {
+            text: '标题',
+            flex: 1,
+            dataIndex: 'title'
+        },
+        {
+            text: '发布部门', 
+            width: 100,
+            dataIndex: 'sender'
+        }
+       
+        
+    ],
+
+
+    initComponent: function() {
+        var me = this;
+
+        me.columns = Ext.Array.merge(me.columns,
+            [{
+                xtype    : 'datecolumn',
+                text     : '发布时间', 
+                width    : 100,  
+                dataIndex: 'last_update',
+               // format: 'Y-m-j',
+                renderer:Ext.util.Format.dateRenderer('Y年m月d日'),
+             //    renderer:Ext.util.Format.dateRenderer('Y-m-d'), 
+                filter: true
+                
+            }]
+        );
+
+        me.callParent(arguments);
+    }   
+});

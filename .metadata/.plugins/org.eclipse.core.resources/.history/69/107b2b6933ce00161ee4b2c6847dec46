@@ -1,0 +1,34 @@
+Ext.define("keyansys.view.header.Main",{
+	 extend: "Ext.panel.Panel",
+
+	    cls: 'toolbar-btn-shadow',
+
+	    xtype: 'app-header',
+
+	    cls:'app-header',//css
+	    height: 80,
+	    
+	    ui: 'footer',
+	  
+	    items:[{
+	        xtype: 'component',
+	        height:65,
+	        cls: 'app-header-logo'
+	    }],
+	    bbar : [{    itemId:'loginnameid',
+            iconCls : 'menu_admin',  
+            text : "欢迎使用科研管理信息系统 V1.0(建议使用火狐浏览器) "
+        },'-',{  
+            text : Ext.Date.format(new Date(),'Y年m月d日')  
+        },'->',
+        	{  
+            text : '修改密码',  
+            itemId: 'modifypassword',
+            iconCls : 'key'  
+        },'-',
+        	{  
+            text : '退出',  
+            itemId: 'logout',
+            iconCls : 'logout'  
+        }]
+	});

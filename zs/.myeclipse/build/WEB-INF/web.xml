@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FindServlet</servlet-name>
+    <servlet-class>com.zs.servlet.FindServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FindKdServlet</servlet-name>
+    <servlet-class>com.zs.servlet.FindKdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ImportKsxx</servlet-name>
+    <servlet-class>com.zs.servlet.ImportKsxx</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResetTishi</servlet-name>
+    <servlet-class>com.zs.servlet.ResetTishi</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ImportKdxx</servlet-name>
+    <servlet-class>com.zs.servlet.ImportKdxx</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetMsg</servlet-name>
+    <servlet-class>com.zs.servlet.GetMsg</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>FindServlet</servlet-name>
+    <url-pattern>/servlet/FindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindKdServlet</servlet-name>
+    <url-pattern>/servlet/FindKdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImportKsxx</servlet-name>
+    <url-pattern>/servlet/ImportKsxx</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResetTishi</servlet-name>
+    <url-pattern>/servlet/ResetTishi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImportKdxx</servlet-name>
+    <url-pattern>/servlet/ImportKdxx</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetMsg</servlet-name>
+    <url-pattern>/servlet/GetMsg</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

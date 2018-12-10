@@ -1,0 +1,15 @@
+Ext.define('keyansys.view.menu.Accordion', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.mainmenu',
+
+    width: 300,
+    layout: {
+        type: 'accordion',
+        pack: 'start'
+    },
+    multi: true,
+    collapsible: false,
+    hideCollapseTool: false,
+    iconCls: 'x-fa fa-sitemap fa-lg',
+    title: '导　航'
+});

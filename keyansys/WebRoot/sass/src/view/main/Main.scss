@@ -1,0 +1,59 @@
+/**
+ * Generates a set of style rules for the "navigation" tab UI.
+ */
+
+
+.x-title-icon-navigation {
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.x-tab-icon-el-navigation {
+    font-family: FontAwesome;
+    color: #acacac;
+
+    .x-tab-over & {
+        color: #c4c4c4;
+    }
+
+    .x-tab-active & {
+        color: #ccc;
+    }
+}
+.simplecms-header-button
+{
+    border:none;
+    background:none;
+}
+
+.x-panel-header-title-navigation > .x-title-text-navigation:after {
+    top: 30px;
+    right: -24px;
+}
+@if $theme-name == 'theme-triton' or $theme-name == 'theme-triton-touch' {
+  $app-header-background-color: #81af34;
+  $app-header-text-shadow-color: #4e691f;
+}
+
+@if $theme-name == 'theme-classic' or $theme-name == 'theme-gray' {
+  $app-header-background-color: darken($base-color, 55%);
+}
+
+@if $theme-name == 'theme-crisp' {
+  $app-header-background-color: #2a3f5d;
+  $app-header-use-gradient: false;
+}
+
+.toolbar-btn-shadow {
+    box-shadow: 0 1px 2px rgba(13, 18, 24, 0.2);
+}
+
+#app-header-logo {
+    width: 385px;
+    height: 58px;
+
+    background: url(../resources/images/logo.png) no-repeat center 4px;
+}
+

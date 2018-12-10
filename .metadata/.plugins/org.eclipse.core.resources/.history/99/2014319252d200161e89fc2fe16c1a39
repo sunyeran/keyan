@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
+	   <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/src/applicationContext.xml</param-value>
+	   </context-param> 
+	<!--<context-param> 
+   <param-name>contextConfigLocation</param-name>
+  <param-value>classpath*:applicationContext*.xml</param-value> 
+</context-param> 
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>  -->
+
+	<!-- <context-param> 
+       <param-name>contextConfigLocation</param-name> 
+       <param-value>classpath*:**/applicationContext.xml</param-value>
+    </context-param> -->
+  <!--  <listener>     
+      <listener-class>com.keyansys.servlet.SessionListener</listener-class>     
+   </listener>    --> 
+<!--   <filter>   
+       <filter-name>openSessionInViewFilter</filter-name>   
+        <filter-class>   
+            org.springframework.orm.hibernate3.support.OpenSessionInViewFilter   
+        </filter-class>    
+        <init-param>   
+            <param-name>singleSession</param-name>   
+            <param-value>true</param-value>   
+        </init-param>   
+</filter>     
+<filter>
+        <filter-name>sessionFilter</filter-name>
+        <filter-class>
+          com.keyansys.servlet.SessionFilter
+        </filter-class>
+ 
+</filter> -->
+  
+  
+	<servlet>
+		<servlet-name>Dispatcher</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+	
+		 <!--  <init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/applicationContext.xml</param-value>
+		</init-param>  --> 
+		
+	</servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.keyansys.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MenuList</servlet-name>
+    <servlet-class>com.keyansys.servlet.MenuList</servlet-class>
+  </servlet>
+ <!--  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserList</servlet-name>
+    <servlet-class>com.keyansys.servlet.UserList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GroupList</servlet-name>
+    <servlet-class>com.keyansys.servlet.GroupList</servlet-class>
+  </servlet> -->
+  <!-- <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.keyansys.servlet.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteUser</servlet-name>
+    <servlet-class>com.keyansys.servlet.DeleteUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DataList</servlet-name>
+    <servlet-class>com.keyansys.servlet.DataList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DataUpdate</servlet-name>
+    <servlet-class>com.keyansys.servlet.DataUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DataDelete</servlet-name>
+    <servlet-class>com.keyansys.servlet.DataDelete</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DataAdd</servlet-name>
+    <servlet-class>com.keyansys.servlet.DataAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NoticeList</servlet-name>
+    <servlet-class>com.keyansys.servlet.NoticeList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteNotice</servlet-name>
+    <servlet-class>com.keyansys.servlet.DeleteNotice</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddNotice</servlet-name>
+    <servlet-class>com.keyansys.servlet.AddNotice</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PatentCheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.PatentCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PaperCheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.PaperCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeachingCheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.TeachingCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SubjectCheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.SubjectCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadFile</servlet-name>
+    <servlet-class>com.keyansys.servlet.UploadFile</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WorkloadList</servlet-name>
+    <servlet-class>com.keyansys.servlet.WorkloadList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Workload</servlet-name>
+    <servlet-class>com.keyansys.servlet.Workload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PasswordModify</servlet-name>
+    <servlet-class>com.keyansys.servlet.PasswordModify</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditNotice</servlet-name>
+    <servlet-class>com.keyansys.servlet.EditNotice</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetPhotos</servlet-name>
+    <servlet-class>com.keyansys.servlet.GetPhotos</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetPhoto</servlet-name>
+    <servlet-class>com.keyansys.servlet.GetPhoto</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsMenu</servlet-name>
+    <servlet-class>com.keyansys.servlet.StatisticsMenu</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsDepWorkload</servlet-name>
+    <servlet-class>com.keyansys.servlet.StatisticsDepWorkload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PaperUncheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.PaperUncheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PatentUncheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.PatentUncheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SubjectUncheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.SubjectUncheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeachingUncheck</servlet-name>
+    <servlet-class>com.keyansys.servlet.TeachingUncheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResetPassword</servlet-name>
+    <servlet-class>com.keyansys.servlet.ResetPassword</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsAllMenu</servlet-name>
+    <servlet-class>com.keyansys.servlet.StatisticsAllMenu</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StatisticsAllWorkload</servlet-name>
+    <servlet-class>com.keyansys.servlet.StatisticsAllWorkload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDepPhoto</servlet-name>
+    <servlet-class>com.keyansys.servlet.GetDepPhoto</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeletePhoto</servlet-name>
+    <servlet-class>com.keyansys.servlet.DeletePhoto</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditUser</servlet-name>
+    <servlet-class>com.keyansys.servlet.EditUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExportDepWorkload</servlet-name>
+    <servlet-class>com.keyansys.servlet.ExportDepWorkload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>modifyWorkloadLevel</servlet-name>
+    <servlet-class>com.keyansys.servlet.ModifyWorkloadLevel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BaseServlet</servlet-name>
+    <servlet-class>com.keyansys.servlet.BaseServlet</servlet-class>
+  </servlet>
+
+
+
+
+ -->
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MenuList</servlet-name>
+    <url-pattern>/servlet/MenuList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserList</servlet-name>
+    <url-pattern>/servlet/UserList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GroupList</servlet-name>
+    <url-pattern>/servlet/GroupList</url-pattern>
+  </servlet-mapping>
+ <!--  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/servlet/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUser</servlet-name>
+    <url-pattern>/servlet/DeleteUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataList</servlet-name>
+    <url-pattern>/servlet/DataList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataUpdate</servlet-name>
+    <url-pattern>/servlet/DataUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataDelete</servlet-name>
+    <url-pattern>/servlet/DataDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataAdd</servlet-name>
+    <url-pattern>/servlet/DataAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeList</servlet-name>
+    <url-pattern>/servlet/NoticeList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteNotice</servlet-name>
+    <url-pattern>/servlet/DeleteNotice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddNotice</servlet-name>
+    <url-pattern>/servlet/AddNotice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatentCheck</servlet-name>
+    <url-pattern>/servlet/PatentCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaperCheck</servlet-name>
+    <url-pattern>/servlet/PaperCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeachingCheck</servlet-name>
+    <url-pattern>/servlet/TeachingCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SubjectCheck</servlet-name>
+    <url-pattern>/servlet/SubjectCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadFile</servlet-name>
+    <url-pattern>/servlet/UploadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WorkloadList</servlet-name>
+    <url-pattern>/servlet/WorkloadList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Workload</servlet-name>
+    <url-pattern>/servlet/Workload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PasswordModify</servlet-name>
+    <url-pattern>/servlet/PasswordModify</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditNotice</servlet-name>
+    <url-pattern>/servlet/EditNotice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetPhotos</servlet-name>
+    <url-pattern>/servlet/GetPhotos</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>GetPhoto</servlet-name>
+    <url-pattern>/servlet/GetPhoto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsMenu</servlet-name>
+    <url-pattern>/servlet/StatisticsMenu</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsDepWorkload</servlet-name>
+    <url-pattern>/servlet/StatisticsDepWorkload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaperUncheck</servlet-name>
+    <url-pattern>/servlet/PaperUncheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PatentUncheck</servlet-name>
+    <url-pattern>/servlet/PatentUncheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SubjectUncheck</servlet-name>
+    <url-pattern>/servlet/SubjectUncheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeachingUncheck</servlet-name>
+    <url-pattern>/servlet/TeachingUncheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResetPassword</servlet-name>
+    <url-pattern>/servlet/ResetPassword</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsAllMenu</servlet-name>
+    <url-pattern>/servlet/StatisticsAllMenu</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsAllWorkload</servlet-name>
+    <url-pattern>/servlet/StatisticsAllWorkload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDepPhoto</servlet-name>
+    <url-pattern>/servlet/GetDepPhoto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeletePhoto</servlet-name>
+    <url-pattern>/servlet/DeletePhoto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditUser</servlet-name>
+    <url-pattern>/servlet/EditUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportDepWorkload</servlet-name>
+    <url-pattern>/servlet/ExportDepWorkload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>modifyWorkloadLevel</servlet-name>
+    <url-pattern>/servlet/ModifyWorkloadLevel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BaseServlet</servlet-name>
+    <url-pattern>/servlet/BaseServlet</url-pattern>
+  </servlet-mapping>
+   -->
+
+
+</web-app>

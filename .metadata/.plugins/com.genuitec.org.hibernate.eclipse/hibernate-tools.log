@@ -1,0 +1,8 @@
+2016-12-12 15:09:18,032 0      [      Worker-72] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\keyan\src\applicationContext.xml(4) Document is invalid: no grammar found.
+2016-12-12 15:09:18,036 4      [      Worker-72] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\keyan\src\applicationContext.xml(4) Document root element "beans", must match DOCTYPE root "null".
+2017-06-14 09:45:11,346 0      [     Worker-114] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(2) Document is invalid: no grammar found.
+2017-06-14 09:45:11,359 13     [     Worker-114] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(2) Document root element "beans", must match DOCTYPE root "null".
+2017-06-23 13:48:23,411 0      [     Worker-527] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(4) Document is invalid: no grammar found.
+2017-06-23 13:48:23,482 71     [     Worker-527] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(4) Document root element "beans", must match DOCTYPE root "null".
+2017-06-27 09:07:51,297 0      [      Worker-71] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(4) Document is invalid: no grammar found.
+2017-06-27 09:07:51,330 33     [      Worker-71] ERROR   org.hibernate.util.XMLHelper  - Error parsing XML: D:\MyEclipse\workspace\zs\src\applicationContext.xml(4) Document root element "beans", must match DOCTYPE root "null".

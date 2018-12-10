@@ -1,0 +1,139 @@
+Ext.define('keyansys.controller.Menu', {
+    extend: 'Ext.app.Controller',
+
+   requires:[
+       'keyansys.view.user.PasswordModify',
+       'keyansys.view.user.ResetPassword',
+       'keyansys.view.user.ModifyWorkloadLevel'
+   ],
+
+    models: [
+        'menu.Root',
+        'menu.Item'
+    ],
+    stores: [
+        'Menu'
+    ],
+    views: [
+        'menu.Accordion',
+        'menu.Item'
+        
+    ],
+
+    refs: [
+        {
+            ref: 'mainPanel',
+            selector: 'mainpanel'
+        }
+    ],
+
+   renderDynamicMenu: function(view, options) {
+
+        var dynamicMenus = [];
+
+        view.body.mask('Loading Menus... Please wait...');
+
+        this.getMenuStore().load(function(records, op, success){
+
+            //noinspection JSValidateTypes
+            Ext.each(records, function(root){
+
+                var menu = Ext.create('keyansys.view.menu.Item',{
+                    title: root.get('text'),
+                    iconCls: root.get('iconCls')
+                });
+
+                var treeNodeStore = root.items(),
+                    nodes = [],
+                    item;
+
+                for (var i=0; i<treeNodeStore.getCount(); i++){
+                    item = treeNodeStore.getAt(i);
+
+                   nodes.push({
+                        text: item.get('text'),
+                        leaf: true,
+                        iconCls: item.get('iconCls'),
+                        id: item.get('id'),
+                        className: item.get('className')
+                    });
+                }
+
+                menu.getRootNode().appendChild(nodes);
+
+                dynamicMenus.push(menu);
+            });
+
+            view.add(dynamicMenus);
+            view.body.unmask();
+        });
+    },
+    onTreepanelSelect: function(selModel, record, index, options) {
+        //console.log(record.raw.className);
+
+        var mainPanel = this.getMainPanel();
+        if((record.get('text')=="修改个人密码")||(record.get('text')=="修改管理员密码")){
+        	//alert("ok！");
+        	var win = Ext.create('keyansys.view.user.PasswordModify');
+            win.show();
+        }
+        else if((record.get('text')=="重置教师密码")){
+        	//alert("ok！");
+        	var win = Ext.create('keyansys.view.user.ResetPassword');
+            win.show();
+        }
+         else if((record.get('text')=="修改教师工作量标准")){
+        	//alert("ok！");
+        	var win = Ext.create('keyansys.view.user.ModifyWorkloadLevel');
+            win.show();
+        }
+        else{
+	        var newTab = mainPanel.items.findBy(
+	        function (tab){ 
+	            return tab.title === record.get('text'); 
+	        });
+	
+	        //console.log(record.raw.className);
+	
+	        if (!newTab){
+	            newTab = mainPanel.add({
+	                xtype: record.get('className'),
+	                closable: true,
+	               // plain: true,
+	                iconCls: record.get('iconCls'),
+	                title: record.get('text'),
+	                autoDestroy:true,
+                   destroy:function (){//销毁tabpanel
+                   if(this.fireEvent("destroy",this)!=false){
+                      this.el.remove();
+                      getNewTab = null;
+                      newTab = null;
+                      if(Ext.isIE){
+                       CollectGarbage();
+                      }
+                   }
+                }
+	            });
+	        }
+	
+	        mainPanel.setActiveTab(newTab);
+	    }
+    },
+
+    onTreepanelItemClick: function(view, record, item, index, event, options){
+        this.onTreepanelSelect(view, record, index, options);
+    },
+
+    init: function(application) {
+        this.control({
+            "mainmenu": {
+                render:  this.renderDynamicMenu
+            },
+            "mainmenuitem": {
+                //select: this.onTreepanelSelect,
+                itemclick: this.onTreepanelItemClick
+            }
+        });
+    }
+
+});

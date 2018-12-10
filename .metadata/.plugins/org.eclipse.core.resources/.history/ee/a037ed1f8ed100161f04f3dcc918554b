@@ -1,0 +1,56 @@
+/**
+ * This class is the main view for the application. It is specified in app.js as the
+ * "mainView" property. That setting automatically applies the "viewport"
+ * plugin causing this view to become the body element (i.e., the viewport).
+ *
+ * TODO - Replace this content of this view to suite the needs of your application.
+ */
+Ext.define('keyansys.view.main.Main', {
+    extend: 'Ext.tab.Panel',
+    xtype: 'app-main',
+
+    requires: [
+        'Ext.plugin.Viewport',
+        'Ext.window.MessageBox',
+/*
+        'keyansys.view.main.MainController',
+        'keyansys.view.main.MainModel',
+        'keyansys.view.main.List'*/
+    ],
+
+    controller: 'main',
+    viewModel: 'main',
+    plugins:'viewport',
+ //   ui: 'navigation',
+    layout: {
+        type: 'border'
+    },
+   
+    items: [
+       /* {
+            xtype: 'panel',
+        	//xtype: 'container',
+            width: 185,
+            collapsible: true,
+            region: 'west',
+            style: 'background-color: #8FB488;'
+        },*/
+        {
+            xtype: 'appheader',
+            region: 'north'
+           
+        },
+        {
+            xtype: 'panel',
+            region: 'center'
+        }/*,
+        {
+            xtype: 'container',
+            region: 'south',
+            height: 60,
+            style: 'border-top: 1px solid #4c72a4;background-color: #6699cc;',
+           // html: '<div id="titleHeader"><center><span style="font-size:14px;">天津滨海职业学院 信息网络中心编制 </span></center></div>',
+            html: '<div id="titleHeader"><center><span style="font-size:12px;">Copyright ©2015-2016 信息网络中心编制 All rights reserved.</span></center></div>'
+        }*/
+    ]
+});

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+		value="jdbc:mysql://localhost:3306/keyandb?useUnicode=true&amp;characterEncoding=utf-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="25216071"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/keyan/hibernate/beans/User.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Groups.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Paper.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Patent.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Subject.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Teaching.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Notice.hbm.xml</value>
+				<value>com/keyan/hibernate/beans/Photo.hbm.xml</value>
+			</list>
+		</property></bean>
+		<!-- 配置事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+		
+	</bean>
+	<bean id="userDAO" class="com.keyan.hibernate.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="groupsDAO" class="com.keyan.hibernate.beans.GroupsDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="paperDAO" class="com.keyan.hibernate.beans.PaperDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="patentDAO" class="com.keyan.hibernate.beans.PatentDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="subjectDAO" class="com.keyan.hibernate.beans.SubjectDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="teachingDAO" class="com.keyan.hibernate.beans.TeachingDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="noticeDAO" class="com.keyan.hibernate.beans.NoticeDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="photoDAO" class="com.keyan.hibernate.beans.PhotoDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="loginServlet"	class="com.keyan.servlet.LoginServlet">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="userlist"	class="com.keyan.servlet.UserList">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="grouplist"	class="com.keyan.servlet.GroupList">
+		<property name="groupsDAO">
+			<ref local="groupsDAO" />
+		</property>
+	</bean>
+	<bean id="adduser"	class="com.keyan.servlet.AddUser">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="deleteuser"	class="com.keyan.servlet.DeleteUser">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="passwordmodify"	class="com.keyan.servlet.PasswordModify">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="noticelist"	class="com.keyan.servlet.NoticeList">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<bean id="patentcheck"	class="com.keyan.servlet.PatentCheck">
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+	</bean>
+	<bean id="workload"	class="com.keyan.servlet.Workload">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+		<property name="subjectDAO">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean>
+	<bean id="datalist"	class="com.keyan.servlet.DataList">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+		<property name="patentDAO">
+			<ref local="patentDAO" />
+		</property>
+		<property name="subjectDAO">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean>
+	<!-- 	p:userDAO-ref="userDAO"/> -->
+	
+	<!-- <bean id="noticeDAO" class="com.keyan.hibernate.dao.NoticeDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="paperDAO" class="com.keyan.hibernate.dao.PaperDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="teachingDAO" class="com.keyan.hibernate.dao.TeachingDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean> -->
+	<!-- 定义DAO代理 -->
+	<bean id="userDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="userDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="groupsDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="groupsDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="paperDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="paperDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="patentDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="patentDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="subjectDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="subjectDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="teachingDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="teachingDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="noticeDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="noticeDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="photoDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="photoDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+	    		<prop key="insert*">PROPAGATION_REQUIRED</prop> 
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- <bean id="noticeDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="noticeDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="paperDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="paperDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="teachingDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="teachingDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean> -->
+	<!-- 定义Struts配置 -->
+	<!-- <bean name="/login" class="com.keyan.struts.actions.LoginAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/listuser" class="com.keyan.struts.actions.ListuserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/edituser" class="com.keyan.struts.actions.ListuserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/adduser" class="com.keyan.struts.actions.ListuserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/notice" class="com.keyan.struts.actions.NoticeAction">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<bean name="/notice_add"
+		class="com.keyan.struts.actions.NoticeAction">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<bean name="/notice_edit"
+		class="com.keyan.struts.actions.NoticeAction">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<bean name="/paper" class="com.keyan.struts.actions.PaperAction">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+	</bean>
+	<bean name="/paper_add" class="com.keyan.struts.actions.PaperAction">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+	</bean>
+	<bean name="/paper_edit" class="com.keyan.struts.actions.PaperAction">
+		<property name="paperDAO">
+			<ref local="paperDAO" />
+		</property>
+	</bean>
+	<bean name="/teaching" class="com.keyan.struts.actions.TeachingAction">
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean>
+	<bean name="/teaching_add" class="com.keyan.struts.actions.TeachingAction">
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean>
+	<bean name="/teaching_edit" class="com.keyan.struts.actions.TeachingAction">
+		<property name="teachingDAO">
+			<ref local="teachingDAO" />
+		</property>
+	</bean> -->
+	 <!--  
+	<bean name="logger" class="com.keyan.spring.aop.LoggingInterceptor" />
+	
+	<bean name="loggingAutoProxy"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>/login</value>
+				<value>/notice</value>
+				<value>/notice_add</value>
+				<value>/notice_edit</value>
+				<value>/listuser</value>
+				<value>/edituser</value>
+				<value>/adduser</value>
+			</list>
+		</property>
+		
+		<property name="interceptorNames">
+			<list>
+				<value>logger</value>
+			</list>
+		</property>
+	</bean> 
+	  -->
+	</beans>

@@ -1,0 +1,27 @@
+
+Ext.define('keyansys.view.Viewport', {
+    extend: 'Ext.container.Viewport',
+    alias: 'widget.mainviewport',
+
+  
+        requires: [
+            'Ext.layout.container.VBox',
+            'Ext.plugin.Viewport',
+            'keyansys.view.header.Main'
+        ],
+
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+        items: [
+                {
+                    xtype: 'app-header',
+                    height: 65,
+                    id: 'app-header'
+                },
+                {
+                    xtype: 'app-main', flex: 1
+                }
+            ]
+    });

@@ -1,0 +1,19 @@
+Ext.define('keyansys.view.menu.Accordion', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.mainmenu',
+ //   bodyStyle: 'background:#fff; padding:10px;',
+   
+   layout: {
+        type: 'accordion',
+        pack: 'start'
+    },
+    multi: true,
+     collapsible: false,  
+     floatable: false ,
+    // autoScroll:false,
+    split:true,
+    hideCollapseTool: false,
+   // iconCls: 'fa fa-sitemap fa-lg',
+   iconCls: 'sitemap',
+    title: '导 航 栏'
+});

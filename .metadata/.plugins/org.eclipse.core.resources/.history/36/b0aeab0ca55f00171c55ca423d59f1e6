@@ -1,0 +1,246 @@
+
+Ext.define('zs.view.login.LoginController', {
+    extend: 'Ext.app.ViewController',
+    alias:'controller.login',
+  
+ 
+    views: [
+        'Login',
+        'Kdcx',
+        'Manage'
+  
+    ],
+
+ 
+    init: function(application) {
+    
+      /*  this.control({
+         
+            "login form textfield": {
+                specialkey: this.onTextfielSpecialKey
+            },
+            "login form textfield[name=password]": {
+                keypress: this.onTextfielKeyPress
+            }
+          
+        });*/
+
+ 
+    },
+    onButtonClickkd:function(button,e,options){
+    	 var formPanel = button.up('form');
+         login = button.up('login');
+    	login.close();
+    	var win=Ext.create('zs.view.login.Kdcx',{id:'kdcx'},
+    		Ext.Ajax.request({
+	            url: 'servlet/FindKdServlet',
+	       //     cache: false,
+	       //     async: false,
+
+          
+                success: function( response, action,options) {
+                
+           
+               
+                 var result=response.responseText;
+                result=Ext.JSON.decode(result);
+        //       alert(result.data.xm);
+                if (result.success) {
+                	var formCmp =Ext.ComponentQuery.query('kdcx #kdcxform')[0];
+              
+                    var form = formCmp.getForm();
+                   
+                
+                     var userValues = {
+                   		  ksh:result.data.ksh,
+                             xm: result.data.xm,
+                             sjr: result.data.sjr,
+                             jtdz:result.data.jtdz,
+                             yzbm:result.data.yzbm,
+                             lxdh:result.data.lxdh,
+                             yjh:result.data.yjh,
+                             tishi:'恭喜你被天津滨海职业学院录取！'
+                         };
+                     form.setValues(userValues);
+                
+                } else {
+                 
+                	Ext.Msg.alert("提示",result.msg);
+                }
+     
+            },
+           
+            failure: function(conn, response, options, eOpts) {
+
+                Ext.MessageBox.alert("系统出错",action.result.msg);
+            },
+            scope:this
+        }));
+      win.show();
+    },
+   /* onButtonClickKdcx:function(button,e,options){
+    	 var formPanel = button.up('form'),
+         login = button.up('login');
+         ksh = formPanel.down('textfield[name=ksh]').getValue();
+         xm = formPanel.down('textfield[name=xm]').getValue();   
+         
+     if (formPanel.getForm().isValid()) {
+  
+         Ext.Ajax.request({
+             url: 'servlet/FindKdServlet',
+             cache: false,
+             async: false,
+
+           
+             success: function( response, action,options) {
+                 
+            
+                
+                  var result=response.responseText;
+                 result=Ext.JSON.decode(result);
+                
+                 if (result.success) {
+               //  	Ext.ComponentQuery.query('form')[0].load()
+                 	 var formCmp = button.up("kdform");
+                      var form = formCmp.getForm();
+                      var userValues = {
+                    		  ksh:result.data.ksh,
+                              xm: result.data.xm,
+                              sjr: result.data.sjr,
+                              jtdz:result.data.jtdz,
+                              yzbm:result.data.yzbm,
+                              lxdh:result.data.lxdh,
+                              yjh:result.data.yjh,
+                              tishi:'恭喜你被天津滨海职业学院录取！'
+                          };
+                      form.setValues(userValues);
+                   //   this.lookupReference('kd').setDisabled ( false);
+                 //    login.close();
+                    // cookieValue=getCookie("name");
+             //       Ext.apply(zs.util.Config,result);
+               
+                 //    Ext.create('zs.view.main.Main');
+                   //  keyansys.util.SessionMonitor.start();
+                   
+                 } else {
+                  
+                 	Ext.Msg.alert("提示",result.msg);
+                 }
+      
+             },
+            
+             failure: function(conn, response, options, eOpts) {
+
+           //      Ext.get(login.getEl()).unmask();
+             
+                 Ext.MessageBox.alert("系统出错",action.result.msg);
+             },
+             scope:this
+         });
+    }   
+
+  // return cookieValue;
+ },  */
+ 
+    onButtonClickSubmit: function(button,e,options){
+	    var formPanel = button.up('form'),
+            login = button.up('login'),
+            ksh = formPanel.down('textfield[name=ksh]').getValue();
+        //    xm = formPanel.down('textfield[name=xm]').getValue();   
+            
+        if (formPanel.getForm().isValid()) {
+     
+            Ext.Ajax.request({
+                url: 'servlet/FindServlet',
+                cache: false,
+                async: false,
+
+                params: {
+                    ksh: ksh
+                 //   xm: xm
+                },
+                success: function( response, action,options) {
+                    
+               
+                   
+                     var result=response.responseText;
+                    result=Ext.JSON.decode(result);
+                   
+                    if (result.success) {
+                  //  	Ext.ComponentQuery.query('form')[0].load()
+                    	 var formCmp = button.up("form");
+                         var form = formCmp.getForm();
+                         var userValues = {
+                                 xm: result.data.xm,
+                                 xbdm: result.data.xbdm,
+                                 sfzh:result.data.sfzh,
+                                 lqzy:result.data.lqzy,
+                                 xi:result.data.xi,
+                                 sheng:result.data.sheng,
+                                 tishi:'恭喜你被天津滨海职业学院录取！'
+                             };
+                         form.setValues(userValues);
+                         this.lookupReference('kd').setDisabled ( false);
+                      
+                      
+                    } else {
+                     
+                    	Ext.Msg.alert("提示",result.msg);
+                    }
+         
+                },
+               
+                failure: function(conn, response, options, eOpts) {
+
+              //      Ext.get(login.getEl()).unmask();
+                
+                    Ext.MessageBox.alert("系统出错",action.result.msg);
+                },
+                scope:this
+            });
+       }   
+
+     // return cookieValue;
+    },  
+    
+  /*  onTextfielSpecialKey: function(field, e, options) {
+        if (e.getKey() == e.ENTER){
+            var submitBtn = field.up('form').down('button#submit');
+            submitBtn.fireEvent('click', submitBtn, e, options);
+        }
+    },
+
+    onTextfielKeyPress: function(field, e, options) {
+      var charCode = e.getCharCode(),
+            me = this;
+
+        if((e.shiftKey && charCode >= 97 && charCode <= 122) ||
+            (!e.shiftKey && charCode >= 65 && charCode <= 90)){
+
+            if(me.capslockTooltip === undefined){
+                me.capslockTooltip = Ext.widget('capslocktooltip');
+            }
+
+            me.capslockTooltip.show();
+
+        } else {
+
+            if(me.capslockTooltip !== undefined){
+                me.capslockTooltip.hide();
+            }
+        }
+    },
+*/
+  
+
+onButtonClickCancel:function(button,e,options){
+//	this.lookupReference('form').reset();
+	 var formPanel = button.up('form');
+     login = button.up('login');
+	login.close();
+	var win=Ext.create('zs.view.manage.Manage');
+	win.show();
+}
+
+});
+  
